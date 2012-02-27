@@ -21,6 +21,7 @@ track of all tags.
 - HistoMessenger.hh and .cc : suppress fileType command
 - Update Readme and all macros accordingly
 - remove unused macros
+- add PhysListEmStandardWVI;    SetPolarAngle = pi
      
 08-11-11 mma (testem3-V09-04-08)
 - modify SteppingVerbose for OutOfWorld
