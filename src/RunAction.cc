@@ -38,7 +38,6 @@
 
 #include "G4Run.hh"
 #include "G4RunManager.hh"
-#include "G4UnitsTable.hh"
 
 #include "G4ParticleTable.hh"
 #include "G4ParticleDefinition.hh"
@@ -48,6 +47,9 @@
 #include "G4Positron.hh"
 #include "G4ProductionCutsTable.hh"
 #include "G4LossTableManager.hh"
+
+#include "G4UnitsTable.hh"
+#include "G4SystemOfUnits.hh"
 
 #include "Randomize.hh"
 
@@ -144,8 +146,8 @@ void RunAction::EndOfRunAction(const G4Run* aRun)
   G4cout << "\n------------------------------------------------------------\n";
   G4cout << std::setw(14) << "material"
          << std::setw(17) << "Edep       RMS"
-	 << std::setw(33) << "sqrt(E0(GeV))*rmsE/Emean"
-	 << std::setw(23) << "total tracklen \n \n";
+         << std::setw(33) << "sqrt(E0(GeV))*rmsE/Emean"
+         << std::setw(23) << "total tracklen \n \n";
 
   for (G4int k=1; k<=fDetector->GetNbOfAbsor(); k++)
     {
@@ -158,7 +160,7 @@ void RunAction::EndOfRunAction(const G4Run* aRun)
         G4int    nn    = 0;
         G4double sume  = 0.0;
         G4double sume2 = 0.0;
-	// compute trancated means  
+        // compute trancated means  
         G4double lim   = rmsEAbs * 2.5;
         for(G4int i=0; i<nEvt; i++) {
           G4double e = (fEnergyDeposit[k])[i];
@@ -166,13 +168,13 @@ void RunAction::EndOfRunAction(const G4Run* aRun)
             sume  += e;
             sume2 += e*e;
             nn++;
-	  }
-	}
+          }
+        }
         G4double norm1 = G4double(nn);
         if(norm1 > 0.0) norm1 = 1.0/norm1;
-	MeanEAbs  = sume*norm1;
-	MeanEAbs2 = sume2*norm1;
-	rmsEAbs  = std::sqrt(std::abs(MeanEAbs2 - MeanEAbs*MeanEAbs));
+        MeanEAbs  = sume*norm1;
+        MeanEAbs2 = sume2*norm1;
+        rmsEAbs  = std::sqrt(std::abs(MeanEAbs2 - MeanEAbs*MeanEAbs));
       }
 
       resolution= 100.*sqbeam*rmsEAbs/MeanEAbs;
@@ -204,9 +206,9 @@ void RunAction::EndOfRunAction(const G4Run* aRun)
   G4cout << "\n------------------------------------------------------------\n";
 
   G4cout << " Beam particle " 
-	 << fPrimary->GetParticleGun()->
+         << fPrimary->GetParticleGun()->
     GetParticleDefinition()->GetParticleName()
-	 << "  E = " << G4BestUnit(beamEnergy,"Energy") << G4endl;
+         << "  E = " << G4BestUnit(beamEnergy,"Energy") << G4endl;
   G4cout << " Mean number of gamma  " << (G4double)fN_gamma*norm << G4endl;
   G4cout << " Mean number of e-     " << (G4double)fN_elec*norm << G4endl;
   G4cout << " Mean number of e+     " << (G4double)fN_pos*norm << G4endl;
@@ -254,7 +256,7 @@ void RunAction::EndOfRunAction(const G4Run* aRun)
     if (fLimittrue[j] < DBL_MAX) {
       if (!isStarted) {
         acc.BeginOfAcceptance("Sampling Calorimeter",nEvt);
-	isStarted = true;
+        isStarted = true;
       }
       MeanEAbs = fSumEAbs[j];
       rmsEAbs  = fSum2EAbs[j];
@@ -341,7 +343,7 @@ void RunAction::PrintDedxTables()
       G4cout.precision(2);
       G4cout << "\nERAN  " << tkmin/GeV << " (ekmin)\t"
                            << tkmax/GeV << " (ekmax)\t"
-			   << nbin      << " (nekbin)";
+                           << nbin      << " (nekbin)";
       G4double cutgam =
          (*(theCoupleTable->GetEnergyCutsVector(idxG4GammaCut)))[index];
       if (cutgam < tkmin) cutgam = tkmin;
@@ -358,9 +360,9 @@ void RunAction::PrintDedxTables()
       for (G4int l=0;l<nbin; ++l)
          {
            G4double dedx = G4LossTableManager::Instance()
-	                                       ->GetDEDX(part,tk[l],couple);
+                                               ->GetDEDX(part,tk[l],couple);
            G4cout << dedx/(MeV/cm) << "\t";
-	   if ((l+1)%ncolumn == 0) G4cout << "\n ";
+           if ((l+1)%ncolumn == 0) G4cout << "\n ";
          }
       G4cout << G4endl;
      }

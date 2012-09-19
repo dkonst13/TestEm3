@@ -55,7 +55,7 @@ class EventAction : public G4UserEventAction
     void SetPrintModulo(G4int    val)  {fPrintModulo = val;};
     
     void SumEnergy(G4int k, G4double de, G4double dl)
-        {fEnergyDeposit[k] += de; fTrackLengthCh[k] += dl;};  	
+        {fEnergyDeposit[k] += de; fTrackLengthCh[k] += dl;};          
         
   private:  
     DetectorConstruction* fDetector;

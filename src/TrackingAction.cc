@@ -39,6 +39,7 @@
 
 #include "G4Track.hh"
 #include "G4Positron.hh"
+#include "G4PhysicalConstants.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 

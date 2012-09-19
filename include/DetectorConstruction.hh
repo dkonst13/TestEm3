@@ -42,7 +42,7 @@ class G4Material;
 class G4UniformMagField;
 class DetectorMessenger;
 
-     const G4int MaxAbsor = 10;			// 0 + 9  
+     const G4int MaxAbsor = 10;                        // 0 + 9  
      
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 

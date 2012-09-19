@@ -154,14 +154,14 @@ void HistoManager::SetHisto(G4int ih,
  // 
  // histo 21 : energy flow (MeV)
  // histo 22 : lateral energy leak (MeV)  
-  	 
+           
   const G4String id[] = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
                          "10","11","12","13","14","15","16","17","18","19",
-			 "20","21","22"};
-			 
+                         "20","21","22"};
+                         
   G4String title;
-    			 
-  if (ih < MaxAbsor) {			 
+                             
+  if (ih < MaxAbsor) {                         
     title = "Edep in absorber " + id[ih] + " (" + unit + ")";
   } else if (ih > MaxAbsor && ih < 2*MaxAbsor) {
     title = "longit. profile of Edep (MeV/event) in absorber " 
@@ -238,9 +238,9 @@ void HistoManager::saveAscii()
      
       for (G4int iBin=0; iBin<fNbins[ih]; iBin++) {
          File << "  " << iBin << "\t" 
-	      << fHistPt[ih]->axis().bin_center(iBin) << "\t"
-	      << fHistPt[ih]->bin_height(iBin) 
-	      << G4endl;
+              << fHistPt[ih]->axis().bin_center(iBin) << "\t"
+              << fHistPt[ih]->bin_height(iBin) 
+              << G4endl;
       } 
     }
  } 

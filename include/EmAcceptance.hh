@@ -48,7 +48,7 @@ public:
 
   void EmAcceptanceGauss(const G4String& title, G4int stat, 
                                G4double avr, G4double avr0, 
-		               G4double rms, G4double limit);
+                               G4double rms, G4double limit);
 
 private:
 

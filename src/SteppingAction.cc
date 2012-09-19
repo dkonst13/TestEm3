@@ -39,6 +39,7 @@
 #include "G4Step.hh"
 #include "G4Positron.hh"
 #include "G4RunManager.hh"
+#include "G4PhysicalConstants.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -88,7 +89,7 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
   
   //longitudinal profile of edep per absorber
   if (edep>0.) fHistoManager->FillHisto(MaxAbsor+absorNum, 
-				       G4double(layerNum+1), edep);
+                                       G4double(layerNum+1), edep);
   
   //energy flow
   //

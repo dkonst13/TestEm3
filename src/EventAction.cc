@@ -77,7 +77,7 @@ void EventAction::BeginOfEventAction(const G4Event* evt)
 void EventAction::EndOfEventAction(const G4Event*)
 {
   for (G4int k=1; k<=fDetector->GetNbOfAbsor(); k++) {
-     fRunAct->FillPerEvent(k,fEnergyDeposit[k],fTrackLengthCh[k]);		       
+     fRunAct->FillPerEvent(k,fEnergyDeposit[k],fTrackLengthCh[k]);                       
      if (fEnergyDeposit[k] > 0.) fHistoManager->FillHisto(k, fEnergyDeposit[k]);
   }
 }
