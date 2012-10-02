@@ -57,11 +57,11 @@ class RunAction : public G4UserRunAction
 {
 public:
 
-  RunAction(DetectorConstruction*, PrimaryGeneratorAction*, HistoManager*);
-  ~RunAction();
+  RunAction(DetectorConstruction*, PrimaryGeneratorAction*);
+ ~RunAction();
 
-  void BeginOfRunAction(const G4Run*);
-  void   EndOfRunAction(const G4Run*);
+  virtual void BeginOfRunAction(const G4Run*);
+  virtual void   EndOfRunAction(const G4Run*);
 
   void FillPerEvent(G4int,G4double,G4double);
     

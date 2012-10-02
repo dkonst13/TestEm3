@@ -41,18 +41,17 @@
 
 class RunAction;
 class EventActionMessenger;
-class HistoManager;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 class EventAction : public G4UserEventAction
 {
   public:  
-    EventAction(DetectorConstruction*, RunAction*, HistoManager*);
+    EventAction(DetectorConstruction*, RunAction*);
    ~EventAction();
 
-    void BeginOfEventAction(const G4Event*);
-    void   EndOfEventAction(const G4Event*);
+    virtual void BeginOfEventAction(const G4Event*);
+    virtual void   EndOfEventAction(const G4Event*);
     
     void SetDrawFlag   (G4String val)  {fDrawFlag    = val;};
     void SetPrintModulo(G4int    val)  {fPrintModulo = val;};
@@ -70,7 +69,6 @@ class EventAction : public G4UserEventAction
     G4String              fDrawFlag; 
     G4int                 fPrintModulo;         
     EventActionMessenger* fEventMessenger;
-    HistoManager*         fHistoManager;
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

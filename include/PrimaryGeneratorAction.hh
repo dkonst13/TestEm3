@@ -42,26 +42,26 @@
 class G4Event;
 class DetectorConstruction;
 class PrimaryGeneratorMessenger;
-class HistoManager;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
 {
   public:
-    PrimaryGeneratorAction(DetectorConstruction*, HistoManager*);    
+    PrimaryGeneratorAction(DetectorConstruction*);    
    ~PrimaryGeneratorAction();
 
   public:
     void SetDefaultKinematic();
-    void SetRndmBeam(G4double val) { rndmBeam = val;} 
+    void SetRndmBeam(G4double val) { rndmBeam = val;}
+    virtual 
     void GeneratePrimaries(G4Event*);
+    
     G4ParticleGun* GetParticleGun() {return particleGun;};
     
   private:
     G4ParticleGun*         particleGun;
-    DetectorConstruction*  Detector;
-    HistoManager*          histoManager;        
+    DetectorConstruction*  Detector;   
     G4double rndmBeam;   //lateral random beam extension in fraction sizeYZ/2   
     
     PrimaryGeneratorMessenger* gunMessenger; 

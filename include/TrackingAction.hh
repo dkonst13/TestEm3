@@ -41,24 +41,22 @@
 class DetectorConstruction;
 class RunAction;
 class EventAction;
-class HistoManager;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 class TrackingAction : public G4UserTrackingAction {
 
   public:  
-    TrackingAction(DetectorConstruction*,RunAction*,EventAction*,HistoManager* );
+    TrackingAction(DetectorConstruction*,RunAction*,EventAction*);
    ~TrackingAction() {};
    
-    void  PreUserTrackingAction(const G4Track*);   
-    void PostUserTrackingAction(const G4Track*);
+    virtual void  PreUserTrackingAction(const G4Track*);   
+    virtual void PostUserTrackingAction(const G4Track*);
     
   private:
     DetectorConstruction* fDetector;
     RunAction*            fRunAct;    
     EventAction*          fEventAct;
-    HistoManager*         fHistoManager;
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

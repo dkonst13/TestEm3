@@ -53,7 +53,7 @@ class DetectorConstruction : public G4VUserDetectorConstruction
 {
 public:
   
-  DetectorConstruction();
+   DetectorConstruction();
   ~DetectorConstruction();
 
 public:
@@ -67,7 +67,8 @@ public:
   void SetNbOfLayers    (G4int);   
 
   void SetMagField   (G4double);
-     
+  
+  virtual   
   G4VPhysicalVolume* Construct();
 
   void UpdateGeometry();
