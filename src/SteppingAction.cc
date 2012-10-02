@@ -47,9 +47,8 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 SteppingAction::SteppingAction(DetectorConstruction* det, RunAction* run,
-                               EventAction* evt, HistoManager* hist)
-:G4UserSteppingAction(),fDetector(det),fRunAct(run),fEventAct(evt),
- fHistoManager(hist) 
+                               EventAction* evt)
+:G4UserSteppingAction(),fDetector(det),fRunAct(run),fEventAct(evt) 
 { }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -91,8 +90,8 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
   fEventAct->SumEnergy(absorNum,edep,stepl);
   
   //longitudinal profile of edep per absorber
-  if (edep>0.) fHistoManager->FillHisto(MaxAbsor+absorNum, 
-                                       G4double(layerNum+1), edep);
+  if (edep>0.) G4AnalysisManager::Instance()->FillH1(MaxAbsor+absorNum, 
+                                                    G4double(layerNum+1), edep);
   
   //energy flow
   //

@@ -58,11 +58,11 @@
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-RunAction::RunAction(DetectorConstruction* det, PrimaryGeneratorAction* prim,
-                     HistoManager* hist)
-:fDetector(det), fPrimary(prim), fHistoManager(hist)
+RunAction::RunAction(DetectorConstruction* det, PrimaryGeneratorAction* prim)
+:fDetector(det), fPrimary(prim), fRunMessenger(0), fHistoManager(0)
 {
   fRunMessenger = new RunActionMessenger(this);
+  fHistoManager = new HistoManager();
   fApplyLimit = false;
 
   for (G4int k=0; k<MaxAbsor; k++) { fEdeptrue[k] = fRmstrue[k] = 1.;
@@ -108,7 +108,8 @@ void RunAction::BeginOfRunAction(const G4Run* aRun)
   
   //histograms
   //
-  fHistoManager->book();
+  G4AnalysisManager* analysis = G4AnalysisManager::Instance();
+  if (analysis->IsActive()) analysis->OpenFile();
    
   //example of print dEdx tables
   //
@@ -219,10 +220,11 @@ void RunAction::EndOfRunAction(const G4Run* aRun)
   
   //Energy flow
   //
+  G4AnalysisManager* analysis = G4AnalysisManager::Instance();
   G4int Idmax = (fDetector->GetNbOfLayers())*(fDetector->GetNbOfAbsor());
   for (G4int Id=1; Id<=Idmax+1; Id++) {
-    fHistoManager->FillHisto(2*MaxAbsor+1, (G4double)Id, fEnergyFlow[Id]);
-    fHistoManager->FillHisto(2*MaxAbsor+2, (G4double)Id, fLateralEleak[Id]);
+    analysis->FillH1(2*MaxAbsor+1, (G4double)Id, fEnergyFlow[Id]);
+    analysis->FillH1(2*MaxAbsor+2, (G4double)Id, fLateralEleak[Id]);
   }
   
   //Energy deposit from energy flow balance
@@ -275,11 +277,14 @@ void RunAction::EndOfRunAction(const G4Run* aRun)
   //normalize histograms
   //
   for (G4int ih = MaxAbsor+1; ih < MaxHisto; ih++) {
-    fHistoManager->Normalize(ih,norm/MeV);
+    analysis->ScaleH1(ih,norm/MeV);
   }
   
-  //save histograms   
-  fHistoManager->save();
+  //save histograms
+  if (analysis->IsActive()) {   
+    analysis->Write();
+    analysis->CloseFile();
+  }    
 
   // show Rndm status
   CLHEP::HepRandom::showEngineStatus();
