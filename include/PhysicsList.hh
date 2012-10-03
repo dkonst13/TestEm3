@@ -64,17 +64,17 @@ public:
 
 private:
 
-    G4double cutForGamma;
-    G4double cutForElectron;
-    G4double cutForPositron;
-    G4double currentDefaultCut;
+    G4double fCutForGamma;
+    G4double fCutForElectron;
+    G4double fCutForPositron;
+    G4double fCurrentDefaultCut;
     
-    G4VPhysicsConstructor*  emPhysicsList;
-    G4String emName;
+    G4VPhysicsConstructor*  fEmPhysicsList;
+    G4String fEmName;
     
-    StepMax* stepMaxProcess;
+    StepMax* fStepMaxProcess;
     
-    PhysicsListMessenger* pMessenger;
+    PhysicsListMessenger* fMessenger;
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
