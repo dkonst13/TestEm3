@@ -27,7 +27,6 @@
 /// \brief Definition of the EventActionMessenger class
 //
 // $Id: EventActionMessenger.hh,v 1.3 2006-06-29 16:51:17 gunter Exp $
-// GEANT4 tag $Name: not supported by cvs2svn $
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
