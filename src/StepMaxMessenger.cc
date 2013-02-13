@@ -40,7 +40,9 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 StepMaxMessenger::StepMaxMessenger(StepMax* stepM)
-:fStepMax(stepM)
+:G4UImessenger(),fStepMax(stepM),
+ fStepMaxDir(0),    
+ fStepMaxCmd(0)
 {
   fStepMaxDir = new G4UIdirectory("/testem/stepMax/");
   fStepMaxDir->SetGuidance("histograms control");

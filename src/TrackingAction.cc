@@ -47,7 +47,7 @@
 
 TrackingAction::TrackingAction(DetectorConstruction* det,RunAction* run,
                                EventAction* evt)
-:fDetector(det), fRunAct(run), fEventAct(evt)
+:G4UserTrackingAction(),fDetector(det), fRunAct(run), fEventAct(evt)
 { }
  
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
