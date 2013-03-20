@@ -23,7 +23,7 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-/// \file electromagnetic/TestEm3/src/ExG4HbookAnalysisManager.cc
+/// \file electromagnetic/TestEm2/src/ExG4HbookAnalysisManager.cc
 /// \brief Implementation of the ExG4HbookAnalysisManager class
 //
 // $Id$
@@ -48,7 +48,8 @@ const G4int ExG4HbookAnalysisManager::fgkDefaultH2HbookIdOffset = 100;
 const G4int ExG4HbookAnalysisManager::fgkDefaultNtupleHbookId = 1;
 const G4String ExG4HbookAnalysisManager::fgkDefaultNtupleDirectoryName = "ntuple";
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 ExG4HbookAnalysisManager* ExG4HbookAnalysisManager::Instance()
 {
   if ( fgInstance == 0 ) {
@@ -58,7 +59,8 @@ ExG4HbookAnalysisManager* ExG4HbookAnalysisManager::Instance()
   return fgInstance;
 }    
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 ExG4HbookAnalysisManager::ExG4HbookAnalysisManager()
  : G4VAnalysisManager("Hbook"),
    fH1HbookIdOffset(-1),
@@ -92,7 +94,8 @@ ExG4HbookAnalysisManager::ExG4HbookAnalysisManager()
   setntuc(); //for ntuple.
 }
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 ExG4HbookAnalysisManager::~ExG4HbookAnalysisManager()
 {  
   std::vector<tools::hbook::h1*>::iterator it;
@@ -113,7 +116,8 @@ ExG4HbookAnalysisManager::~ExG4HbookAnalysisManager()
 // private methods
 //
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 tools::hbook::wntuple::column<int>*    
 ExG4HbookAnalysisManager::GetNtupleIColumn(G4int id) const
 {
@@ -129,8 +133,9 @@ ExG4HbookAnalysisManager::GetNtupleIColumn(G4int id) const
   
   return it->second;
 }  
-    
-//_____________________________________________________________________________
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......    
+
 tools::hbook::wntuple::column<float>*  
 ExG4HbookAnalysisManager::GetNtupleFColumn(G4int id) const
 {
@@ -148,7 +153,8 @@ ExG4HbookAnalysisManager::GetNtupleFColumn(G4int id) const
 }  
 
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 tools::hbook::wntuple::column<double>* 
 ExG4HbookAnalysisManager::GetNtupleDColumn(G4int id) const
 {
@@ -169,7 +175,8 @@ ExG4HbookAnalysisManager::GetNtupleDColumn(G4int id) const
 // public methods
 //
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 G4bool ExG4HbookAnalysisManager::OpenFile(const G4String& fileName)
 {
   G4String name(fileName);
@@ -221,8 +228,9 @@ G4bool ExG4HbookAnalysisManager::OpenFile(const G4String& fileName)
   
   return true;
 }  
-  
-//_____________________________________________________________________________
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......  
+
 G4bool ExG4HbookAnalysisManager::Write() 
 {
 #ifdef G4VERBOSE
@@ -243,7 +251,8 @@ G4bool ExG4HbookAnalysisManager::Write()
   return result;  
 }
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 G4bool ExG4HbookAnalysisManager::CloseFile()
 {
 #ifdef G4VERBOSE
@@ -264,8 +273,9 @@ G4bool ExG4HbookAnalysisManager::CloseFile()
 
   return result;
 } 
-   
-//_____________________________________________________________________________
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......   
+
 G4int ExG4HbookAnalysisManager::CreateH1(const G4String& name, const G4String& title,
                                G4int nbins, G4double xmin, G4double xmax)
 {
@@ -323,7 +333,8 @@ G4int ExG4HbookAnalysisManager::CreateH1(const G4String& name, const G4String& t
   return index + fFirstHistoId;
 }                                         
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 G4int ExG4HbookAnalysisManager::CreateH2(const G4String& name, const G4String& title,
                                G4int nxbins, G4double xmin, G4double xmax,
                                G4int nybins, G4double ymin, G4double ymax)
@@ -384,7 +395,8 @@ G4int ExG4HbookAnalysisManager::CreateH2(const G4String& name, const G4String& t
   return index + fFirstHistoId;
 }                                         
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 void ExG4HbookAnalysisManager::CreateNtuple(const G4String& name, 
                                           const G4String& title)
 {
@@ -427,7 +439,8 @@ void ExG4HbookAnalysisManager::CreateNtuple(const G4String& name,
 #endif
 }                                         
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 G4int ExG4HbookAnalysisManager::CreateNtupleIColumn(const G4String& name)
 {
 #ifdef G4VERBOSE
@@ -448,7 +461,8 @@ G4int ExG4HbookAnalysisManager::CreateNtupleIColumn(const G4String& name)
   return index + fFirstNtupleColumnId;       
 }                                         
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 G4int ExG4HbookAnalysisManager::CreateNtupleFColumn(const G4String& name)
 {
 #ifdef G4VERBOSE
@@ -470,7 +484,8 @@ G4int ExG4HbookAnalysisManager::CreateNtupleFColumn(const G4String& name)
 }                                         
 
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 G4int ExG4HbookAnalysisManager::CreateNtupleDColumn(const G4String& name) 
 {
 #ifdef G4VERBOSE
@@ -491,7 +506,8 @@ G4int ExG4HbookAnalysisManager::CreateNtupleDColumn(const G4String& name)
   return index + fFirstNtupleColumnId;       
 }                                         
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 void ExG4HbookAnalysisManager::FinishNtuple()
 { 
 #ifdef G4VERBOSE
@@ -508,8 +524,9 @@ void ExG4HbookAnalysisManager::FinishNtuple()
     fpVerboseL1->Message("finish", "ntuple", fNtupleName);
 #endif
 }
-  
-//_____________________________________________________________________________
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......  
+
 G4bool ExG4HbookAnalysisManager::FillH1(G4int id, G4double value, G4double weight)
 {
 #ifdef G4VERBOSE
@@ -540,7 +557,8 @@ G4bool ExG4HbookAnalysisManager::FillH1(G4int id, G4double value, G4double weigh
   return true;
 }
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 G4bool ExG4HbookAnalysisManager::FillH2(G4int id, 
                                        G4double xvalue, G4double yvalue,
                                        G4double weight)
@@ -575,7 +593,8 @@ G4bool ExG4HbookAnalysisManager::FillH2(G4int id,
   return true;
 }
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 G4bool ExG4HbookAnalysisManager::FillNtupleIColumn(G4int id, G4int value)
 {
 #ifdef G4VERBOSE
@@ -604,8 +623,10 @@ G4bool ExG4HbookAnalysisManager::FillNtupleIColumn(G4int id, G4int value)
   }  
 #endif
  return true;       
-}                                         
-//_____________________________________________________________________________
+} 
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......                                        
+
 G4bool ExG4HbookAnalysisManager::FillNtupleFColumn(G4int id, G4float value)
 {
 #ifdef G4VERBOSE
@@ -634,8 +655,10 @@ G4bool ExG4HbookAnalysisManager::FillNtupleFColumn(G4int id, G4float value)
   }  
 #endif
   return true;       
-}                                         
-//_____________________________________________________________________________
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......                                         
+
 G4bool ExG4HbookAnalysisManager::FillNtupleDColumn(G4int id, G4double value)
 {
 #ifdef G4VERBOSE
@@ -666,7 +689,8 @@ G4bool ExG4HbookAnalysisManager::FillNtupleDColumn(G4int id, G4double value)
   return true;       
 }                                         
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 G4bool ExG4HbookAnalysisManager::AddNtupleRow()
 { 
 #ifdef G4VERBOSE
@@ -691,8 +715,9 @@ G4bool ExG4HbookAnalysisManager::AddNtupleRow()
 #endif
   return true;
 }
- 
-//_____________________________________________________________________________
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo...... 
+
 tools::hbook::h1*  ExG4HbookAnalysisManager::GetH1(G4int id, G4bool warn) const 
 {
   G4int index = id - fFirstHistoId;
@@ -708,7 +733,8 @@ tools::hbook::h1*  ExG4HbookAnalysisManager::GetH1(G4int id, G4bool warn) const
   return fH1Vector[index];
 }
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 tools::hbook::h2*  ExG4HbookAnalysisManager::GetH2(G4int id, G4bool warn) const 
 {
   G4int index = id - fFirstHistoId;
@@ -724,13 +750,15 @@ tools::hbook::h2*  ExG4HbookAnalysisManager::GetH2(G4int id, G4bool warn) const
   return fH2Vector[index];
 }
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 tools::hbook::wntuple* ExG4HbookAnalysisManager::GetNtuple() const
 {
   return fNtuple;
 }
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 G4bool ExG4HbookAnalysisManager::SetH1HbookIdOffset(G4int offset) 
 {
   if ( fH1Vector.size() ) {
@@ -754,7 +782,8 @@ G4bool ExG4HbookAnalysisManager::SetH1HbookIdOffset(G4int offset)
   return true;
 }  
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 G4bool ExG4HbookAnalysisManager::SetH2HbookIdOffset(G4int offset) 
 {
   if ( fH2Vector.size() ) {
@@ -778,7 +807,8 @@ G4bool ExG4HbookAnalysisManager::SetH2HbookIdOffset(G4int offset)
   return true;
 }  
 
-//_____________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 G4bool ExG4HbookAnalysisManager::SetNtupleHbookId(G4int ntupleId)
 {
   if ( fNtuple ) {
@@ -801,5 +831,7 @@ G4bool ExG4HbookAnalysisManager::SetNtupleHbookId(G4int ntupleId)
   fNtupleHbookId = ntupleId;
   return true;
 }
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 #endif

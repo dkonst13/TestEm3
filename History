@@ -14,6 +14,9 @@ track of all tags.
      ----------------------------------------------------------
      * Reverse chronological order (last date on top), please *
      ----------------------------------------------------------
+     
+20-03-13 mma (testem3-V09-06-01)
+- PhysListEmStandard : use default G4UrbanMscModel
 
 13-02-13 I.Hrivnacova 
 - Applied coding guidelines (virtual keyword, data members initialization)
