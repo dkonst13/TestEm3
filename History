@@ -14,6 +14,8 @@ track of all tags.
      ----------------------------------------------------------
      * Reverse chronological order (last date on top), please *
      ----------------------------------------------------------
+01-04-13 A.Dotti (testem3-V09-06-02)
+- New G4VUserPhysicsList interface 
      
 20-03-13 mma (testem3-V09-06-01)
 - PhysListEmStandard : use default G4UrbanMscModel
