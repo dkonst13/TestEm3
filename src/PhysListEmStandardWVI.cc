@@ -88,7 +88,7 @@ void PhysListEmStandardWVI::ConstructProcess()
   aParticleIterator->reset();
   while( (*aParticleIterator)() ){
     G4ParticleDefinition* particle = aParticleIterator->value();
-    G4ProcessMtestem3-V09-06-02anager* pmanager = particle->GetProcessManager();
+    G4ProcessManager* pmanager = particle->GetProcessManager();
     G4String particleName = particle->GetParticleName();
      
     if (particleName == "gamma") {
