@@ -77,7 +77,7 @@ int main(int argc,char** argv) {
   // set user action classes
   RunAction*      runAct = new RunAction(detector,primary);
   EventAction*    evtAct = new EventAction(detector,runAct);
-  TrackingAction* trkAct = new TrackingAction(detector,runAct,evtAct);
+  TrackingAction* trkAct = new TrackingAction(detector,runAct);
   SteppingAction* stpAct = new SteppingAction(detector,runAct,evtAct);
   
   runManager->SetUserAction(runAct);
