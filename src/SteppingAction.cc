@@ -111,7 +111,7 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
     G4double sizeYZ = 0.5*fDetector->GetCalorSizeYZ();       
     G4double Eflow = endPoint->GetKineticEnergy();
     if (particle == G4Positron::Positron()) Eflow += 2*electron_mass_c2;
-    if ((std::abs(position.y()) >= sizeYZ) || (std::abs(position.z()) >= sizeYZ)) 
+   if ((std::abs(position.y()) >= sizeYZ) || (std::abs(position.z()) >= sizeYZ))
                                   run->SumLateralEleak(Idnow, Eflow);
     else if (direction.x() >= 0.) run->SumEnergyFlow(plane=Idnow+1, Eflow);
     else                          run->SumEnergyFlow(plane=Idnow,  -Eflow);    
