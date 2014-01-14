@@ -269,9 +269,9 @@ void Run::EndOfRun()
   G4cout << " Beam particle " 
          << fParticle->GetParticleName()
          << "  E = " << G4BestUnit(beamEnergy,"Energy") << G4endl;
-  G4cout << " Mean number of gamma          " << (G4double)fN_gamma*norm << G4endl;
-  G4cout << " Mean number of e-             " << (G4double)fN_elec*norm << G4endl;
-  G4cout << " Mean number of e+             " << (G4double)fN_pos*norm << G4endl;
+  G4cout << " Mean number of gamma       " << (G4double)fN_gamma*norm << G4endl;
+  G4cout << " Mean number of e-          " << (G4double)fN_elec*norm << G4endl;
+  G4cout << " Mean number of e+          " << (G4double)fN_pos*norm << G4endl;
   G4cout << std::setprecision(6)
          << " Mean number of charged steps  " << fChargedStep << G4endl;
   G4cout << " Mean number of neutral steps  " << fNeutralStep << G4endl;
@@ -293,8 +293,8 @@ void Run::EndOfRun()
   
   G4int nbOfAbsor = fDetector->GetNbOfAbsor();
   for (G4int Id=1; Id<=Idmax; Id++) {
-    G4int iAbsor = Id%nbOfAbsor; if (iAbsor==0) iAbsor = nbOfAbsor;
-    EdepTot [iAbsor] += (fEnergyFlow[Id] - fEnergyFlow[Id+1] - fLateralEleak[Id]);
+   G4int iAbsor = Id%nbOfAbsor; if (iAbsor==0) iAbsor = nbOfAbsor;
+   EdepTot[iAbsor] += (fEnergyFlow[Id] - fEnergyFlow[Id+1] - fLateralEleak[Id]);
   }
   
   G4cout << std::setprecision(3)
