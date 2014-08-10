@@ -15,6 +15,9 @@ track of all tags.
      * Reverse chronological order (last date on top), please *
      ----------------------------------------------------------
 	 
+10-08-14 mma (testem3-V10-00-07)
+- update README, emtutor.mac
+		 
 14-06-14 mma (testem3-V10-00-06)
 - remove PhysicsList::SetCuts()	
  

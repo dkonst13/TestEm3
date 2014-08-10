@@ -32,29 +32,29 @@ $Id$
   defined in the DetectorMessenger class.
   
 
-	|<----layer 0---------->|<----layer 1---------->|<----layer 2---------->|
-	|			|			|			|
-	==========================================================================
-	||		|	||		|	||		|	||
-	||		|	||		|	||		|	||
-	||   abs 1	| abs 2	||   abs 1	| abs 2	||   abs 1	| abs 2	||
-	||		|	||		|	||		|	||
-	||		|	||		|	||		|	||
- beam	||		|	||		|	||		|	||
-======>	||		|	||		|	||		|	||
-	||		|	||		|	||		|	||
-	||		|	||		|	||		|	||
-	||		|	||		|	||		|	||
-	||		|	||		|	||		|	||
-	||    cell 1	| cell 2||    cell 3	| cell 4||    cell 5	| cell 6||
-	==========================================================================
-	^		^	^		^	^		^	^
-	pln1		pln2	pln3		pln4	pln5		pln6	pln7
+	    |<----layer 0---------->|<----layer 1---------->|<----layer 2---------->|
+	    |			|			|			            |                       |
+	    ==========================================================================
+	    ||		    |	        ||		    |	        ||		    |	        ||
+	    ||		    |	        ||		    |	        ||		    |	        ||
+	    ||   abs 1	| abs 2	    ||   abs 1	| abs 2	    ||   abs 1	| abs 2	    ||
+	    ||		    |	        ||		    |	        ||		    |	        ||
+	    ||		    |	        ||		    |	        ||		    |	        ||
+ beam	||		    |	        ||		    |	        ||		    |	        ||
+======>	||		    |	        ||		    |	        ||		    |	        ||
+	    ||		    |	        ||		    |	        ||		    |	        ||
+	    ||		    |	        ||		    |	        ||		    |	        ||
+	    ||		    |	        ||		    |	        ||		    |	        ||
+	    ||		    |	        ||		    |	        ||		    |	        ||
+	    ||   cell 1	| cell 2    ||   cell 3	| cell 4    ||   cell 5	| cell 6    ||
+	    ==========================================================================
+	    ^		    ^	        ^		    ^	        ^		    ^	        ^
+	    pln1		pln2	    pln3		pln4	    pln5		pln6	  pln7
  	
   NB. The number of absorbers and the number of layers can be set to 1.
   In this case we have a unique homogeneous block of matter, which looks like 
   a bubble chamber rather than a calorimeter ...
-  (see the macro of commands: newgeom.mac)
+  (see the macro emtutor.mac)
 	    
  2- PHYSICS LISTS
  
@@ -145,38 +145,31 @@ $Id$
   histo 1 : energy deposit in absorber 1
   histo 2 : energy deposit in absorber 2
   ...etc...........
-  
- One can control the binning of the histo with the command:
-  /analysis/h1/set   idAbsor  nbin  Emin  Emax  unit 
-  ...etc...........  
-  where unit is the desired energy unit for that histo (see TestEm3.in).
-  
+    
   histo 11 : longitudinal profile of energy deposit in absorber 1 (MeV/event)
   histo 12 : longitudinal profile of energy deposit in absorber 2 (MeV/event)  
   ...etc...........  
   
   histo 21 : energy flow (MeV/event)
   histo 22 : lateral energy leak (MeV/event)  
-  
+  ...etc...........
+      
   NB. Numbering scheme for histograms:
   layer     : from 1 to NbOfLayers (inclued)
   absorbers : from 1 to NbOfAbsor (inclued)
   planes    : from 1 to NbOfLayers*NbOfAbsor + 1 (inclued)
-        
+  
+ One can control the binning of the histo with the command:
+  /analysis/h1/set   idAbsor  nbin  Emin  Emax  unit 
+  where unit is the desired energy unit for that histo (see TestEm3.in).
+         
   One can control the name of the histograms file with the command:
   /analysis/setFileName  name  (default testem3)
    
   It is possible to choose the format of the histogram file : root (default),
-  hbook, xml, csv, by using namespace in HistoManager.hh 
+  xml, csv, by using namespace in HistoManager.hh 
    	
  It is also possible to print selected histograms on an ascii file:
  /analysis/h1/setAscii id
  All selected histos will be written on a file name.ascii  (default testem3)
     
- Using hbook format
- ------------------
- 
- Need a special treatement : the Cern Library must be installed and the
- environment variable CERNLIB correctly set. Then, *before* compiling,
- activate G4_USE_HBOOK in GNUmakefile and g4hbook.hh in HistoManager.hh
-  
