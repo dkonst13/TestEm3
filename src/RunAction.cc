@@ -39,6 +39,7 @@
 #include "HistoManager.hh"
 #include "Run.hh"
 #include "G4Timer.hh"
+#include "G4RunManager.hh"
 #include "Randomize.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -98,9 +99,12 @@ void RunAction::EndOfRunAction(const G4Run*)
   // compute and print statistic 
   if (isMaster) {
     fTimer->Stop();
-    G4cout << "\n" << "Total number of events:  "  << fRun->GetNumberOfEvent() 
-           << G4endl;
-    G4cout << "Master thread time:  "  << *fTimer << G4endl;
+    if(!((G4RunManager::GetRunManager()->GetRunManagerType() ==
+          G4RunManager::sequentialRM))) {
+      G4cout << "\n" << "Total number of events:  "  
+             << fRun->GetNumberOfEvent() << G4endl;
+      G4cout << "Master thread time:  "  << *fTimer << G4endl;
+    }
     delete fTimer;
     fRun->EndOfRun();
   }
