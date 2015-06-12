@@ -9,11 +9,13 @@
 #
 /testem/phys/addPhysics  emstandard_opt0
 #
-/run/initialize
+#/run/initialize
 /process/eLoss/verbose 1
 /process/eLoss/CSDARange true
+/run/initialize
 /run/beamOn 3
 #
+/run/particle/dumpCutValues
 /run/particle/storePhysicsTable physdata
 #
 /gun/particle e-
@@ -23,6 +25,6 @@
 #
 /run/particle/retrievePhysicsTable physdata
 #
-/random/resetEngineFrom currentRun.rndm
+#/random/resetEngineFrom currentRun.rndm
 /run/beamOn 3
 #

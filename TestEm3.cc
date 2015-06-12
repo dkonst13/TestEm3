@@ -69,6 +69,7 @@ int main(int argc,char** argv) {
   G4cout << "===== TestEm3 is started with " 
          <<  runManager->GetNumberOfThreads() << " threads =====" << G4endl;
 #else
+ 
   G4VSteppingVerbose::SetInstance(new SteppingVerbose);
   G4RunManager* runManager = new G4RunManager;
 #endif  
