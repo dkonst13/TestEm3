@@ -15,6 +15,10 @@ track of all tags.
      * Reverse chronological order (last date on top), please *
      ----------------------------------------------------------
 
+19-09-15 V.Ivant (testem3-V10-01-02)
+- TestEm3.cc - use default 4 threads, improve vis.mac
+- PhysListEmStandard - use G4EmParameters
+
 12-05-15 V.Ivant (testem3-V10-01-01)
 - PhysicsList - use G4EmStandardPhysicsGS from physics_list library
 
