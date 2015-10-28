@@ -55,14 +55,20 @@
   (see the macro emtutor.mac)
   
 \section TestEm3_s2 PHYSICS LISTS
- 
-  Physics lists can be local (eg. in this example) or from G4 kernel
+
+  Physics lists are based on modular design. Several modules are instantiated:
+  1. Transportation
+  2. EM physics
+  3. Decays
+  4. StepMax - for step limitation
+
+  EM physics builders can be local (eg. in this example) or from G4 kernel
   physics_lists subdirectory.
-   
-  Local physics lists:         
-  - "local"   standard EM physics with current 'best' options setting.
+
+  Local physics builders:
+  - "local" standard EM physics with current 'best' options setting.
               these options are explicited in PhysListEmStandard
-  
+
   From geant4/source/physics_lists/builders:   
   - "emstandard_opt0" recommended standard EM physics for LHC
   - "emstandard_opt1" best CPU performance standard physics for LHC
@@ -96,7 +102,7 @@
   A RUN is a set of events.
   
   TestEm3 computes the energy deposited per absorber and the energy flow through
-  the calorimeter 
+  the calorimeter.
  
 \section TestEm3_s4 VISUALIZATION
  
@@ -110,7 +116,7 @@
   The default view is a longitudinal view of the calorimeter.
  
   The tracks are drawn at the end of event, and erased at the end of run.
-  Optionally one can choose to draw all particles, only the charged one, or
+  Optionally one can choose to draw all particles, only the charged ones, or
   none. This command is defined in EventActionMessenger class.
  
 \section TestEm3_s5 PHYSICS DEMO
