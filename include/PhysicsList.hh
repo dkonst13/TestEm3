@@ -54,6 +54,8 @@ public:
     virtual void ConstructProcess();
     
     void AddPhysicsList(const G4String& name);
+    void AddDecay();
+    void AddRadioactiveDecay();
     void AddStepMax();
 
 private:
