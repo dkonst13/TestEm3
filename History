@@ -14,7 +14,10 @@ track of all tags.
      ----------------------------------------------------------
      * Reverse chronological order (last date on top), please *
      ----------------------------------------------------------
-	 
+
+06-02-16 mma (testem3-V10-02-02)
+- update radioactive.mac
+
 29-01-16 mma (testem3-V10-02-01)
 - Physicsist: add radioactiveDecay process (not active by default)
 
