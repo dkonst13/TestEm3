@@ -5,7 +5,7 @@
 #
 /testem/det/setNbOfLayers 1
 /testem/det/setNbOfAbsor 4
-/testem/det/setAbsor 1 G4_PLEXIGLASS 5 mm
+/testem/det/setAbsor 1 Polystyrene 5 mm
 /testem/det/setAbsor 2 Aluminium 0.5 mm
 /testem/det/setAbsor 3 Air20 2 mm
 /testem/det/setAbsor 4 G4_SODIUM_IODIDE 5 cm
