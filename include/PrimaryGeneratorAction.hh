@@ -61,8 +61,8 @@ class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
   private:
     G4ParticleGun*         fParticleGun;
     DetectorConstruction*  fDetector;   
-    G4double fRndmBeam;   //lateral random beam extension in fraction sizeYZ/2   
-    
+    G4double fRndmBeam;   //lateral random beam extension in fraction sizeYZ/2
+
     PrimaryGeneratorMessenger* fGunMessenger; 
 };
 
