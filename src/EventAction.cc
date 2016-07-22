@@ -56,7 +56,7 @@ void EventAction::BeginOfEventAction(const G4Event*)
 {       
   //initialize EnergyDeposit per event
   //
-  for (G4int k=0; k<MaxAbsor; k++) {
+  for (G4int k=0; k<kMaxAbsor; k++) {
     fEnergyDeposit[k] = fTrackLengthCh[k] = 0.0;   
   }
 }
@@ -77,5 +77,4 @@ void EventAction::EndOfEventAction(const G4Event*)
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 

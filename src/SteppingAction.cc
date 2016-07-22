@@ -95,7 +95,7 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
   
   //longitudinal profile of edep per absorber
   if (edep>0.) {
-    G4AnalysisManager::Instance()->FillH1(MaxAbsor+absorNum, 
+    G4AnalysisManager::Instance()->FillH1(kMaxAbsor+absorNum, 
                                           G4double(layerNum+1), edep);
   }
   //energy flow

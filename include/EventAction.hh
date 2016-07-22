@@ -55,8 +55,8 @@ class EventAction : public G4UserEventAction
   private:  
     DetectorConstruction* fDetector;
     
-    G4double              fEnergyDeposit[MaxAbsor];
-    G4double              fTrackLengthCh[MaxAbsor];
+    G4double              fEnergyDeposit[kMaxAbsor];
+    G4double              fTrackLengthCh[kMaxAbsor];
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

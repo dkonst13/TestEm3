@@ -14,7 +14,10 @@ track of all tags.
      ----------------------------------------------------------
      * Reverse chronological order (last date on top), please *
      ----------------------------------------------------------
-	 
+
+22-07-16 mma  (testem3-V10-02-05)
+- apply coding conventions
+
 04-07-16 I. Hrivnacova  (testem3-V10-02-04)
 - Fixes for Doxygen documentation
 

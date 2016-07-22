@@ -74,12 +74,12 @@ void HistoManager::Book()
   
   // Create all histograms as inactivated 
   // as we have not yet set nbins, vmin, vmax
-  for (G4int k=0; k<MaxHisto; k++) {
-    if (k < MaxAbsor) title = "Edep in absorber " + id[k];
-    if (k > MaxAbsor) title = "Edep longit. profile (MeV/event) in absorber "
-                               + id[k-MaxAbsor];
-    if (k == 2*MaxAbsor+1) title = "energy flow (MeV/event)";
-    if (k == 2*MaxAbsor+2) title = "lateral energy leak (MeV/event)";
+  for (G4int k=0; k<kMaxHisto; k++) {
+    if (k < kMaxAbsor) title = "Edep in absorber " + id[k];
+    if (k > kMaxAbsor) title = "Edep longit. profile (MeV/event) in absorber "
+                               + id[k-kMaxAbsor];
+    if (k == 2*kMaxAbsor+1) title = "energy flow (MeV/event)";
+    if (k == 2*kMaxAbsor+2) title = "lateral energy leak (MeV/event)";
     G4int ih = analysisManager->CreateH1(id[k], title, nbins, vmin, vmax);
     analysisManager->SetH1Activation(ih, false);
   }

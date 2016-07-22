@@ -55,7 +55,7 @@ class DetectorMessenger: public G4UImessenger
     virtual void SetNewValue(G4UIcommand*, G4String);
 
   private:
-    DetectorConstruction* Detector;
+    DetectorConstruction*      fDetector;
 
     G4UIdirectory*             fTestemDir;
     G4UIdirectory*             fDetDir;

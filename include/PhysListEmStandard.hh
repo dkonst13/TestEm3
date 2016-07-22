@@ -59,10 +59,3 @@ class PhysListEmStandard : public G4VPhysicsConstructor
 
 #endif
 
-
-
-
-
-
-
-

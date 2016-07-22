@@ -46,7 +46,7 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 DetectorMessenger::DetectorMessenger(DetectorConstruction * Det)
-:G4UImessenger(),Detector(Det),
+:G4UImessenger(),fDetector(Det),
  fTestemDir(0),
  fDetDir(0),
  fSizeYZCmd(0),
@@ -129,13 +129,13 @@ DetectorMessenger::~DetectorMessenger()
 void DetectorMessenger::SetNewValue(G4UIcommand* command,G4String newValue)
 {
   if( command == fSizeYZCmd )
-   { Detector->SetCalorSizeYZ(fSizeYZCmd->GetNewDoubleValue(newValue));}
+   { fDetector->SetCalorSizeYZ(fSizeYZCmd->GetNewDoubleValue(newValue));}
 
   if( command == fNbLayersCmd )
-   { Detector->SetNbOfLayers(fNbLayersCmd->GetNewIntValue(newValue));}
+   { fDetector->SetNbOfLayers(fNbLayersCmd->GetNewIntValue(newValue));}
 
   if( command == fNbAbsorCmd )
-   { Detector->SetNbOfAbsor(fNbAbsorCmd->GetNewIntValue(newValue));}
+   { fDetector->SetNbOfAbsor(fNbAbsorCmd->GetNewIntValue(newValue));}
    
   if (command == fAbsorCmd)
    {
@@ -145,8 +145,8 @@ void DetectorMessenger::SetNewValue(G4UIcommand* command,G4String newValue)
      is >> num >> mat >> tick >> unt;
      G4String material=mat;
      tick *= G4UIcommand::ValueOf(unt);
-     Detector->SetAbsorMaterial (num,material);
-     Detector->SetAbsorThickness(num,tick);
+     fDetector->SetAbsorMaterial (num,material);
+     fDetector->SetAbsorThickness(num,tick);
    }
 }
 

@@ -74,12 +74,12 @@ class Run : public G4Run
     G4ParticleDefinition*  fParticle;
     G4double  fEkin;
                            
-    G4double fSumEAbs [MaxAbsor], fSum2EAbs [MaxAbsor]; 
-    G4double fSumLAbs [MaxAbsor], fSum2LAbs [MaxAbsor];
+    G4double fSumEAbs [kMaxAbsor], fSum2EAbs [kMaxAbsor]; 
+    G4double fSumLAbs [kMaxAbsor], fSum2LAbs [kMaxAbsor];
     
     std::vector<G4double> fEnergyFlow;
     std::vector<G4double> fLateralEleak;
-    std::vector<G4double> fEnergyDeposit[MaxAbsor];
+    std::vector<G4double> fEnergyDeposit[kMaxAbsor];
     
     G4double fChargedStep;
     G4double fNeutralStep;
@@ -88,9 +88,9 @@ class Run : public G4Run
     G4int  fN_elec;
     G4int  fN_pos;
     
-    G4double fEdeptrue [MaxAbsor];
-    G4double fRmstrue  [MaxAbsor];
-    G4double fLimittrue[MaxAbsor];        
+    G4double fEdeptrue [kMaxAbsor];
+    G4double fRmstrue  [kMaxAbsor];
+    G4double fLimittrue[kMaxAbsor];        
     G4bool fApplyLimit;  
 };
 

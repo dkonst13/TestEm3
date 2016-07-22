@@ -398,7 +398,6 @@ G4VPhysicalVolume* DetectorConstruction::ConstructCalorimeter()
 
   }
 
-
   PrintCalorParameters();
 
   //always return the fPhysical World
@@ -458,9 +457,9 @@ void DetectorConstruction::SetNbOfAbsor(G4int ival)
 {
   // set the number of Absorbers
   //
-  if (ival < 1 || ival > (MaxAbsor-1))
+  if (ival < 1 || ival > (kMaxAbsor-1))
     { G4cout << "\n ---> warning from SetfNbOfAbsor: "
-             << ival << " must be at least 1 and and most " << MaxAbsor-1
+             << ival << " must be at least 1 and and most " << kMaxAbsor-1
              << ". Command refused" << G4endl;
       return;
     }
