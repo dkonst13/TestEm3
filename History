@@ -15,6 +15,9 @@ track of all tags.
      * Reverse chronological order (last date on top), please *
      ----------------------------------------------------------
 
+13-03-18 mma (testem3-V10-04-01)
+- testem1.cc : remove G4UI_USE and G4VIS_USE
+
 14-12-17 V.Ivant (testem3-V10-04-00)
 - corrected TestEm3.in to optimise output
 
