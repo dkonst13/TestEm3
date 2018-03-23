@@ -65,21 +65,21 @@ DetectorMessenger::DetectorMessenger(DetectorConstruction * Det)
   fSizeYZCmd->SetParameterName("Size",false);
   fSizeYZCmd->SetRange("Size>0.");
   fSizeYZCmd->SetUnitCategory("Length");
-  fSizeYZCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
+  fSizeYZCmd->AvailableForStates(G4State_PreInit);
   fSizeYZCmd->SetToBeBroadcasted(false);
     
   fNbLayersCmd = new G4UIcmdWithAnInteger("/testem/det/setNbOfLayers",this);
   fNbLayersCmd->SetGuidance("Set number of layers.");
   fNbLayersCmd->SetParameterName("NbLayers",false);
   fNbLayersCmd->SetRange("NbLayers>0");
-  fNbLayersCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
+  fNbLayersCmd->AvailableForStates(G4State_PreInit);
   fNbLayersCmd->SetToBeBroadcasted(false);
     
   fNbAbsorCmd = new G4UIcmdWithAnInteger("/testem/det/setNbOfAbsor",this);
   fNbAbsorCmd->SetGuidance("Set number of Absorbers.");
   fNbAbsorCmd->SetParameterName("NbAbsor",false);
   fNbAbsorCmd->SetRange("NbAbsor>0");
-  fNbAbsorCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
+  fNbAbsorCmd->AvailableForStates(G4State_PreInit);
   fNbAbsorCmd->SetToBeBroadcasted(false);
      
   fAbsorCmd = new G4UIcommand("/testem/det/setAbsor",this);
@@ -108,7 +108,7 @@ DetectorMessenger::DetectorMessenger(DetectorConstruction * Det)
   unitPrm->SetParameterCandidates(unitList);
   fAbsorCmd->SetParameter(unitPrm);
   //
-  fAbsorCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
+  fAbsorCmd->AvailableForStates(G4State_PreInit);
   fAbsorCmd->SetToBeBroadcasted(false);  
 }
 

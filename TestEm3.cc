@@ -56,8 +56,7 @@ int main(int argc,char** argv) {
   G4UIExecutive* ui = 0;
   if (argc == 1) ui = new G4UIExecutive(argc,argv);
   
-  //choose the Random engine
-  G4Random::setTheEngine(new CLHEP::RanecuEngine);
+  //choose stepping verbose
   G4VSteppingVerbose::SetInstance(new SteppingVerbose);
 
   // Construct the default run manager
