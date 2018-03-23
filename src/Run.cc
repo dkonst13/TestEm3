@@ -294,7 +294,7 @@ void Run::EndOfRun()
   G4int nbOfAbsor = fDetector->GetNbOfAbsor();
   for (G4int Id=1; Id<=Idmax; Id++) {
     G4int iAbsor = Id%nbOfAbsor; if (iAbsor==0) iAbsor = nbOfAbsor;
-    EdepTot[iAbsor] += (fEnergyFlow[Id] - fEnergyFlow[Id+1] - fLateralEleak[Id]);
+    EdepTot[iAbsor] += (fEnergyFlow[Id]-fEnergyFlow[Id+1]-fLateralEleak[Id]);
   }
   
   G4cout << std::setprecision(3)

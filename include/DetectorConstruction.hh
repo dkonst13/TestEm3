@@ -82,9 +82,9 @@ public:
       
   G4int GetNbOfLayers() const              {return fNbOfLayers;}; 
      
-  G4int       GetNbOfAbsor() const                    {return fNbOfAbsor;}; 
-  G4double    GetAbsorThickness(G4int i) const        {return fAbsorThickness[i];};      
-  const G4Material* GetAbsorMaterial(G4int i) const   {return fAbsorMaterial[i];};
+  G4int       GetNbOfAbsor() const                {return fNbOfAbsor;}; 
+  G4double    GetAbsorThickness(G4int i) const    {return fAbsorThickness[i];};
+  const G4Material* GetAbsorMaterial(G4int i) const {return fAbsorMaterial[i];};
 
   const G4VPhysicalVolume* GetphysiWorld() const      {return fPhysiWorld;};
   const G4Material*        GetWorldMaterial() const   {return fWorldMaterial;};
@@ -132,4 +132,3 @@ private:
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 #endif
-

@@ -304,17 +304,17 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   fSolidWorld = new G4Box("World",                                //its name
                    fWorldSizeX/2,fWorldSizeYZ/2,fWorldSizeYZ/2);  //its size
 
-  fLogicWorld = new G4LogicalVolume(fSolidWorld,            //its solid
-                                    fWorldMaterial,        //its material
-                                    "World");                //its name
+  fLogicWorld = new G4LogicalVolume(fSolidWorld,        //its solid
+                                    fWorldMaterial,     //its material
+                                    "World");           //its name
 
-  fPhysiWorld = new G4PVPlacement(0,                      //no rotation
-                                  G4ThreeVector(),       //at (0,0,0)
-                                  fLogicWorld,             //its fLogical volume
-                                  "World",                 //its name
-                                  0,                       //its mother  volume
-                                  false,                   //no boolean operation
-                                  0);                      //copy number
+  fPhysiWorld = new G4PVPlacement(0,                    //no rotation
+                                  G4ThreeVector(),      //at (0,0,0)
+                                  fLogicWorld,          //its fLogical volume
+                                  "World",              //its name
+                                  0,                    //its mother  volume
+                                  false,                //no boolean operation
+                                  0);                   //copy number
   //
   // Calorimeter
   //
@@ -529,8 +529,7 @@ void DetectorConstruction::ConstructSDandField()
         new G4GlobalMagFieldMessenger(fieldValue);
         //msg->SetVerboseLevel(1);
         G4AutoDelete::Register(msg);
-        fFieldMessenger.Put( msg );
-        
+        fFieldMessenger.Put( msg );        
     }
 }
 
