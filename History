@@ -15,6 +15,9 @@ track of all tags.
      * Reverse chronological order (last date on top), please *
      ----------------------------------------------------------
 
+26-03-18 V.Ivant (testem3-V10-04-03)
+- DetectorConstruction - fixed initialisation
+
 23-03-18 V.Ivant (testem3-V10-04-02)
 - StepMax - use thread safe instantiation, mesenger merged with 
     PhysicsListMessenger
