@@ -62,6 +62,14 @@ DetectorConstruction::DetectorConstruction()
   fPhysiCalor(nullptr),fSolidLayer(nullptr),fLogicLayer(nullptr),
   fPhysiLayer(nullptr)
 {
+  for(G4int i=0; i<kMaxAbsor; ++i) { 
+    fAbsorMaterial[i] = nullptr; 
+    fAbsorThickness[i] = 0.0;
+    fSolidAbsor[i] = nullptr;
+    fLogicAbsor[i] = nullptr;
+    fPhysiAbsor[i] = nullptr;
+  } 
+
   // default parameter values of the calorimeter
   fNbOfAbsor = 2;
   fAbsorThickness[1] = 2.3*mm;
@@ -365,7 +373,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   //
 
   G4double xfront = -0.5*fLayerThickness;
-  for (G4int k=1; k<=fNbOfAbsor; k++) {
+  for (G4int k=1; k<=fNbOfAbsor; ++k) {
     fSolidAbsor[k] = new G4Box("Absorber",                //its name
                          fAbsorThickness[k]/2,fCalorSizeYZ/2,fCalorSizeYZ/2);
 
@@ -422,6 +430,7 @@ void DetectorConstruction::SetWorldMaterial(const G4String& material)
     fWorldMaterial = pttoMaterial;
     if(fLogicWorld) {
       fLogicWorld->SetMaterial(fWorldMaterial);
+      fLogicLayer->SetMaterial(fWorldMaterial);
       G4RunManager::GetRunManager()->PhysicsHasBeenModified();
     }
   }
@@ -520,17 +529,17 @@ void DetectorConstruction::SetCalorSizeYZ(G4double val)
 
 void DetectorConstruction::ConstructSDandField()
 {
-    if ( fFieldMessenger.Get() == 0 ) {
-        // Create global magnetic field messenger.
-        // Uniform magnetic field is then created automatically if
-        // the field value is not zero.
-        G4ThreeVector fieldValue = G4ThreeVector();
-        G4GlobalMagFieldMessenger* msg =
-        new G4GlobalMagFieldMessenger(fieldValue);
-        //msg->SetVerboseLevel(1);
-        G4AutoDelete::Register(msg);
-        fFieldMessenger.Put( msg );        
-    }
+  if ( fFieldMessenger.Get() == nullptr ) {
+    // Create global magnetic field messenger.
+    // Uniform magnetic field is then created automatically if
+    // the field value is not zero.
+    G4ThreeVector fieldValue = G4ThreeVector();
+    G4GlobalMagFieldMessenger* msg =
+      new G4GlobalMagFieldMessenger(fieldValue);
+    //msg->SetVerboseLevel(1);
+    G4AutoDelete::Register(msg);
+    fFieldMessenger.Put( msg );        
+  }
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
