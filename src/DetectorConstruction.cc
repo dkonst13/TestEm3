@@ -80,7 +80,7 @@ DetectorConstruction::DetectorConstruction()
 
   // materials
   DefineMaterials();
-  SetWorldMaterial("G4_Galactic");
+  SetWorldMaterial("Galactic");
   SetAbsorMaterial(1,"G4_Pb");
   SetAbsorMaterial(2,"G4_lAr");
 
