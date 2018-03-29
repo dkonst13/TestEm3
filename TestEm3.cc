@@ -53,8 +53,8 @@
 int main(int argc,char** argv) {
 
   //detect interactive mode (if no arguments) and define UI session
-  G4UIExecutive* ui = 0;
-  if (argc == 1) ui = new G4UIExecutive(argc,argv);
+  G4UIExecutive* ui = nullptr;
+  if (argc == 1) { ui = new G4UIExecutive(argc,argv); }
   
   //choose stepping verbose
   G4VSteppingVerbose::SetInstance(new SteppingVerbose);
@@ -89,22 +89,22 @@ int main(int argc,char** argv) {
   runManager->SetUserInitialization(new ActionInitialization(detector));
 
   //initialize visualization
-  G4VisManager* visManager = new G4VisExecutive;
-  visManager->Initialize();
+  G4VisManager* visManager = nullptr;
 
   //get the pointer to the User Interface manager
   G4UImanager* UImanager = G4UImanager::GetUIpointer();
 
   if (ui)  {
-   //interactive mode
-   ui->SessionStart();
-   delete ui;
-  }
-  else  {
-   //batch mode  
-   G4String command = "/control/execute ";
-   G4String fileName = argv[1];
-   UImanager->ApplyCommand(command+fileName);
+    //interactive mode
+    visManager = new G4VisExecutive();
+    visManager->Initialize();
+    ui->SessionStart();
+    delete ui;
+  } else {
+    //batch mode  
+    G4String command = "/control/execute ";
+    G4String fileName = argv[1];
+    UImanager->ApplyCommand(command+fileName);
   }
 
   //job termination 

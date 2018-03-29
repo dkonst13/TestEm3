@@ -15,6 +15,9 @@ track of all tags.
      * Reverse chronological order (last date on top), please *
      ----------------------------------------------------------
 
+29-03-18 V.Ivant (testem3-V10-04-05)
+- TestEm3.cc - small optimisation
+
 27-03-18 mma (testem3-V10-04-04)
 - remove radioactive.mac
 
