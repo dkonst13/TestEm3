@@ -30,6 +30,7 @@
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo.....
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo.....
+#include "G4Types.hh"
 
 #ifdef G4MULTITHREADED
 #include "G4MTRunManager.hh"
@@ -55,7 +56,7 @@ int main(int argc,char** argv) {
   //detect interactive mode (if no arguments) and define UI session
   G4UIExecutive* ui = nullptr;
   if (argc == 1) { ui = new G4UIExecutive(argc,argv); }
-  
+
   //choose stepping verbose
   G4VSteppingVerbose::SetInstance(new SteppingVerbose);
 
@@ -65,26 +66,26 @@ int main(int argc,char** argv) {
   // Number of threads can be defined via 3rd argument
   G4int nThreads = 4;
   if (argc==3) {
-    if(G4String(argv[2]) == "NMAX") { 
+    if(G4String(argv[2]) == "NMAX") {
       nThreads = G4Threading::G4GetNumberOfCores();
     } else {
       nThreads = G4UIcommand::ConvertToInt(argv[2]);
-    } 
-  } else if(argc==1) { 
+    }
+  } else if(argc==1) {
     nThreads = 1;
   }
   if (nThreads > 0) { runManager->SetNumberOfThreads(nThreads); }
-  G4cout << "===== TestEm3 is started with " 
+  G4cout << "===== TestEm3 is started with "
          <<  runManager->GetNumberOfThreads() << " threads =====" << G4endl;
-#else 
+#else
   G4RunManager* runManager = new G4RunManager;
-#endif  
+#endif
 
   //set mandatory initialization classes
   DetectorConstruction* detector = new DetectorConstruction;
   runManager->SetUserInitialization(detector);
   runManager->SetUserInitialization(new PhysicsList);
-      
+
   //set user action classes
   runManager->SetUserInitialization(new ActionInitialization(detector));
 
@@ -101,13 +102,13 @@ int main(int argc,char** argv) {
     ui->SessionStart();
     delete ui;
   } else {
-    //batch mode  
+    //batch mode
     G4String command = "/control/execute ";
     G4String fileName = argv[1];
     UImanager->ApplyCommand(command+fileName);
   }
 
-  //job termination 
+  //job termination
   delete visManager;
   delete runManager;
 }
