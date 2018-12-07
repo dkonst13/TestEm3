@@ -26,7 +26,6 @@
 /// \file electromagnetic/TestEm3/include/EmAcceptance.hh
 /// \brief Definition of the EmAcceptance class
 //
-// $Id$
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

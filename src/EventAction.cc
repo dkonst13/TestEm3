@@ -26,7 +26,6 @@
 /// \file electromagnetic/TestEm3/src/EventAction.cc
 /// \brief Implementation of the EventAction class
 //
-// $Id$
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

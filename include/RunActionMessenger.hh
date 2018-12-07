@@ -26,7 +26,6 @@
 /// \file electromagnetic/TestEm3/include/RunActionMessenger.hh
 /// \brief Definition of the RunActionMessenger class
 //
-// $Id$
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

@@ -26,7 +26,6 @@
 /// \file electromagnetic/TestEm3/include/TrackingAction.hh
 /// \brief Definition of the TrackingAction class
 //
-// $Id$
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

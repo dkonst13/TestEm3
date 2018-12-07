@@ -26,7 +26,6 @@
 /// \file electromagnetic/TestEm3/include/DetectorMessenger.hh
 /// \brief Definition of the DetectorMessenger class
 //
-// $Id$
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

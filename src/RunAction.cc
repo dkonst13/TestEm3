@@ -26,7 +26,6 @@
 /// \file electromagnetic/TestEm3/src/RunAction.cc
 /// \brief Implementation of the RunAction class
 //
-// $Id$
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

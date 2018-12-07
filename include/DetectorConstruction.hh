@@ -26,7 +26,6 @@
 /// \file electromagnetic/TestEm3/include/DetectorConstruction.hh
 /// \brief Definition of the DetectorConstruction class
 //
-// $Id$
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

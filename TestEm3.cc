@@ -26,7 +26,6 @@
 /// \file electromagnetic/TestEm3/TestEm3.cc
 /// \brief Main program of the electromagnetic/TestEm3 example
 //
-// $Id$
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo.....
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo.....

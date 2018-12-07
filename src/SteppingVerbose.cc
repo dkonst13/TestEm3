@@ -27,7 +27,6 @@
 /// \brief Implementation of the SteppingVerbose class
 //
 //
-// $Id$
 // 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

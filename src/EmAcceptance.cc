@@ -26,7 +26,6 @@
 /// \file electromagnetic/TestEm3/src/EmAcceptance.cc
 /// \brief Implementation of the Emeptance class
 //
-// $Id$
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

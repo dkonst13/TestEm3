@@ -26,7 +26,6 @@
 /// \file electromagnetic/TestEm3/src/PrimaryGeneratorMessenger.cc
 /// \brief Implementation of the PrimaryGeneratorMessenger class
 //
-// $Id$
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

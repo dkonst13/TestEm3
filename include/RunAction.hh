@@ -26,7 +26,6 @@
 /// \file electromagnetic/TestEm3/include/RunAction.hh
 /// \brief Definition of the RunAction class
 //
-// $Id$
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

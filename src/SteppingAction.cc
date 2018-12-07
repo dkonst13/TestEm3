@@ -26,7 +26,6 @@
 /// \file electromagnetic/TestEm3/src/SteppingAction.cc
 /// \brief Implementation of the SteppingAction class
 //
-// $Id$
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
