@@ -505,7 +505,7 @@ G4GeometryManager::ReportVoxelStats -- Voxel Statistics
  Run terminated.
 Run Summary
   Number of events processed : 100
-  User=1.750000s Real=1.750741s Sys=0.000000s
+  User=1.720000s Real=1.728031s Sys=0.000000s
 
 ------------------------------------------------------------
       material   Edep       RMS         sqrt(E0(GeV))*rmsE/Emean     total tracklen 
@@ -956,13 +956,13 @@ Index : 2     used in the geometry : Yes
  Run terminated.
 Run Summary
   Number of events processed : 100
-  User=1.460000s Real=1.454597s Sys=0.000000s
+  User=1.450000s Real=1.454123s Sys=0.000000s
 
 ------------------------------------------------------------
       material   Edep       RMS         sqrt(E0(GeV))*rmsE/Emean     total tracklen 
  
-         G4_Pb: 775.83 MeV :  18.29 MeV     2.358 +- 0.2358 %      52.3 cm  +- 1.24 cm 
-        G4_lAr:  214.1 MeV :  16.48 MeV     7.696 +- 0.7696 %      1.01 m   +- 7.74 cm 
+         G4_Pb: 776.64 MeV :  18.57 MeV     2.391 +- 0.2391 %      52.3 cm  +- 1.24 cm 
+        G4_lAr: 214.14 MeV :  16.49 MeV       7.7 +-  0.77 %      1.01 m   +- 7.74 cm 
 
 ------------------------------------------------------------
  Beam particle e-  E = 1 GeV
