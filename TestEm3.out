@@ -4,7 +4,7 @@
         ############################################
 
 **************************************************************
- Geant4 version Name: geant4-10-06-ref-00    (6-December-2019)
+ Geant4 version Name: geant4-10-06-ref-01    (31-January-2020)
                        Copyright : Geant4 Collaboration
                       References : NIM A 506 (2003), 250-303
                                  : IEEE-TNS 53 (2006), 270-278
@@ -508,7 +508,7 @@ G4GeometryManager::ReportVoxelStats -- Voxel Statistics
  Run terminated.
 Run Summary
   Number of events processed : 100
-  User=1.620000s Real=1.626427s Sys=0.010000s
+  User=1.700000s Real=1.798122s Sys=0.000000s
 
 ------------------------------------------------------------
       material   Edep       RMS         sqrt(E0(GeV))*rmsE/Emean     total tracklen 
@@ -958,7 +958,7 @@ Index : 2     used in the geometry : Yes
  Run terminated.
 Run Summary
   Number of events processed : 100
-  User=1.360000s Real=1.354242s Sys=0.000000s
+  User=1.390000s Real=1.420394s Sys=0.000000s
 
 ------------------------------------------------------------
       material   Edep       RMS         sqrt(E0(GeV))*rmsE/Emean     total tracklen 
@@ -978,7 +978,7 @@ Run Summary
  Energy deposition from Energy flow balance : 
   material 	 Total Edep 
  
-     G4_Pb:	 778.957 MeV
+     G4_Pb:	 778.962 MeV
     G4_lAr:	 212.506 MeV
 
 ------------------------------------------------------------
