@@ -508,28 +508,28 @@ G4GeometryManager::ReportVoxelStats -- Voxel Statistics
  Run terminated.
 Run Summary
   Number of events processed : 100
-  User=1.660000s Real=1.662779s Sys=0.000000s
+  User=1.480000s Real=1.528345s Sys=0.000000s
 
 ------------------------------------------------------------
       material   Edep       RMS         sqrt(E0(GeV))*rmsE/Emean     total tracklen 
  
-         G4_Pb: 777.17 MeV :  16.99 MeV     2.186 +- 0.2186 %      54.9 cm  +- 1.26 cm 
-        G4_lAr:  212.1 MeV :  15.52 MeV     7.317 +- 0.7317 %      1.04 m   +- 7.86 cm 
+         G4_Pb:  775.5 MeV :  16.88 MeV     2.176 +- 0.2176 %      54.8 cm  +- 1.33 cm 
+        G4_lAr: 213.41 MeV :  15.64 MeV     7.329 +- 0.7329 %      1.05 m   +- 7.96 cm 
 
 ------------------------------------------------------------
  Beam particle e-  E = 1 GeV
- Mean number of gamma       509
- Mean number of e-          873
- Mean number of e+          53.4
- Mean number of charged steps  3605.39
- Mean number of neutral steps  3715.99
+ Mean number of gamma       510
+ Mean number of e-          869
+ Mean number of e+          53.9
+ Mean number of charged steps  3658.12
+ Mean number of neutral steps  3671.9
 ------------------------------------------------------------
 
  Energy deposition from Energy flow balance : 
   material 	 Total Edep 
  
-     G4_Pb:	 777.169 MeV
-    G4_lAr:	 212.039 MeV
+     G4_Pb:	 775.501 MeV
+    G4_lAr:	 213.342 MeV
 
 ------------------------------------------------------------
 
@@ -958,28 +958,28 @@ Index : 2     used in the geometry : Yes
  Run terminated.
 Run Summary
   Number of events processed : 100
-  User=1.360000s Real=1.363344s Sys=0.000000s
+  User=1.250000s Real=1.279769s Sys=0.000000s
 
 ------------------------------------------------------------
       material   Edep       RMS         sqrt(E0(GeV))*rmsE/Emean     total tracklen 
  
-         G4_Pb: 776.88 MeV :  24.05 MeV     3.095 +- 0.3095 %      52.2 cm  +- 1.45 cm 
-        G4_lAr: 212.92 MeV :  15.92 MeV     7.476 +- 0.7476 %         1 m   +- 7.39 cm 
+         G4_Pb: 778.51 MeV :  21.39 MeV     2.747 +- 0.2747 %      52.2 cm  +- 1.27 cm 
+        G4_lAr: 214.89 MeV :  15.97 MeV     7.433 +- 0.7433 %      1.01 m   +-  7.5 cm 
 
 ------------------------------------------------------------
  Beam particle e-  E = 1 GeV
- Mean number of gamma       291
- Mean number of e-          553
- Mean number of e+          53.2
- Mean number of charged steps  3072.17
- Mean number of neutral steps  2898.52
+ Mean number of gamma       294
+ Mean number of e-          559
+ Mean number of e+          54.3
+ Mean number of charged steps  3076.2
+ Mean number of neutral steps  2949.63
 ------------------------------------------------------------
 
  Energy deposition from Energy flow balance : 
   material 	 Total Edep 
  
-     G4_Pb:	 775.695 MeV
-    G4_lAr:	 213.066 MeV
+     G4_Pb:	 775.003 MeV
+    G4_lAr:	 214.64 MeV
 
 ------------------------------------------------------------
 
@@ -1002,11 +1002,11 @@ Pool ID '7G4Event', size : 0.000961 MB
 Pool ID '15G4PrimaryVertex', size : 0.000961 MB
 Pool ID '17G4PrimaryParticle', size : 0.000961 MB
 Pool ID '17G4DynamicParticle', size : 0.0125 MB
-Pool ID '7G4Track', size : 0.024 MB
+Pool ID '7G4Track', size : 0.025 MB
 Pool ID '18G4TouchableHistory', size : 0.00385 MB
 Pool ID '15G4CountedObjectIvE', size : 0.000961 MB
 Number of memory pools allocated: 9 of which, static: 0
-Dynamic pools deleted: 9 / Total memory freed: 0.093 MB
+Dynamic pools deleted: 9 / Total memory freed: 0.094 MB
 ============================================================
 G4Allocator objects are deleted.
 UImanager deleted.
