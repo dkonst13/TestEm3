@@ -4,7 +4,7 @@
         ############################################
 
 **************************************************************
- Geant4 version Name: geant4-10-06-ref-05    (31-May-2020)
+ Geant4 version Name: geant4-10-06-ref-06    (26-June-2020)
                        Copyright : Geant4 Collaboration
                       References : NIM A 506 (2003), 250-303
                                  : IEEE-TNS 53 (2006), 270-278
@@ -189,7 +189,7 @@ hPairProd:  for proton  SubType=4
            hPairProd : Emin=    0 eV  Emax=  100 TeV
 
 CoulombScat:  for proton, integral:1  SubType=1 BuildTable=1
-      Used Lambda table of anti_proton
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 1
       ThetaMin(p) < Theta(degree) < 180 pLimit(GeV^1)= 0.139531
       ===== EM models for the G4Region  DefaultRegionForTheWorld ======
   eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
@@ -211,7 +211,7 @@ ionIoni:  for GenericIon  SubType=2
 msc:  for alpha  SubType= 10
       RangeFactor= 0.2, stepLimType: 0, latDisp: 0
       ===== EM models for the G4Region  DefaultRegionForTheWorld ======
-            UrbanMsc : Emin=    0 eV  Emax=  100 TeV
+            UrbanMsc : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
 
 ionIoni:  for alpha  SubType=2
       dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
@@ -460,7 +460,7 @@ Region <DefaultRegionForParallelWorld> --  -- is not associated to any world.
  Materials : 
  Production cuts :   gamma 1 mm      e- 1 mm      e+ 1 mm  proton 1 mm 
 
-========= Table of registered couples ==============================
+========= Table of registered couples ============================
 
 Index : 0     used in the geometry : Yes
  Material : Galactic
@@ -483,7 +483,7 @@ Index : 2     used in the geometry : Yes
  Region(s) which use this couple : 
     DefaultRegionForTheWorld
 
-====================================================================
+==================================================================
 
 Start closing geometry.
 G4GeometryManager::ReportVoxelStats -- Voxel Statistics
@@ -508,7 +508,7 @@ G4GeometryManager::ReportVoxelStats -- Voxel Statistics
  Run terminated.
 Run Summary
   Number of events processed : 100
-  User=3.320000s Real=3.328490s Sys=0.000000s
+  User=3.320000s Real=3.354409s Sys=0.000000s
 
 ------------------------------------------------------------
       material   Edep       RMS         sqrt(E0(GeV))*rmsE/Emean     total tracklen 
@@ -656,7 +656,7 @@ hPairProd:  for proton  SubType=4
            hPairProd : Emin=    0 eV  Emax=  100 TeV
 
 CoulombScat:  for proton, integral:1  SubType=1 BuildTable=1
-      Used Lambda table of anti_proton
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 1
       ThetaMin(p) < Theta(degree) < 180 pLimit(GeV^1)= 0.139531
       ===== EM models for the G4Region  DefaultRegionForTheWorld ======
   eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
@@ -678,7 +678,7 @@ ionIoni:  for GenericIon  SubType=2
 msc:  for alpha  SubType= 10
       RangeFactor= 0.2, stepLimType: 0, latDisp: 0
       ===== EM models for the G4Region  DefaultRegionForTheWorld ======
-            UrbanMsc : Emin=    0 eV  Emax=  100 TeV
+            UrbanMsc : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
 
 ionIoni:  for alpha  SubType=2
       dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
@@ -927,7 +927,7 @@ Region <DefaultRegionForParallelWorld> --  -- is not associated to any world.
  Materials : 
  Production cuts :   gamma 1 mm      e- 1 mm      e+ 1 mm  proton 1 mm 
 
-========= Table of registered couples ==============================
+========= Table of registered couples ============================
 
 Index : 0     used in the geometry : Yes
  Material : Galactic
@@ -950,7 +950,7 @@ Index : 2     used in the geometry : Yes
  Region(s) which use this couple : 
     DefaultRegionForTheWorld
 
-====================================================================
+==================================================================
 
 ### Run 1 starts.
 --> Event 0 starts.
@@ -958,7 +958,7 @@ Index : 2     used in the geometry : Yes
  Run terminated.
 Run Summary
   Number of events processed : 100
-  User=2.740000s Real=2.767219s Sys=0.000000s
+  User=2.670000s Real=2.690025s Sys=0.000000s
 
 ------------------------------------------------------------
       material   Edep       RMS         sqrt(E0(GeV))*rmsE/Emean     total tracklen 
@@ -993,10 +993,6 @@ UserPrimaryGenerator deleted.
 RunManager is deleting RunManagerKernel.
 EventManager deleted.
 Units table cleared.
- Number of calls = 0
- Number of split level ('advances'):  0
- Number of full advances:             0
- Number of good advances:             0
 TransportationManager deleted.
 Total navigation history collections cleaned: 33
 ================== Deleting memory pools ===================
