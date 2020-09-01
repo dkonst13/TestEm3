@@ -127,8 +127,8 @@
   As a homework try to visualize a gamma conversion alone, 
   or the effect of the multiple scattering.
 
-  Notice that one can control the maximum step size in each absorber, via the
-  StepMax process and the command 
+  Notice that one can control the maximum step size, via the
+  StepMax process and the command /testem/stepMax
 \verbatim
 /testem/stepMax/absorber  
 \endverbatim
@@ -154,15 +154,14 @@ Idle> exit
  Macros provided in this example:
  - atlashec.mac: ATLAS HEC model
  - dedx.mac: to control dE/dx calculation: 1 layer; minimum ionizing particle
- - emtutor.mac: ADD
+ - emtutor.mac: for tutorial; interactivity + visualisation
  - ionC12.mac: ion C12, 1 layer
  - lhcb.mac: LHCB ECAL model
  - linac.mac: Linac/Ecal from Graham Wilson
  - lockwood.mac: Al-Au-Al 1 layer (G.L.Lockwood et al. SAND79-0414 (1980))
- - retrieveTables.mac: ADD
  - run01.mac: Lead-liquidArgon 50 layers; electron 1 GeV
  - run02.mac: Tungsten-Silicon 50 layers; electron 1 GeV
- - storeTables.mac: ADD
+ - storeTables.mac: show how to store and retrieve physics tables
  - tileCal.mac: ATLAS tileCal
  - vis.mac: to activate visualization
 
