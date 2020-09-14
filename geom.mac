@@ -1,7 +1,8 @@
 #
 # Macro file for "TestEm3.cc" 
 #
-#  1 layer; magnetic field
+# to play with geometry
+# 1 layer; magnetic field
 #
 /control/verbose 2
 #

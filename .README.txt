@@ -155,6 +155,7 @@ Idle> exit
  - atlashec.mac: ATLAS HEC model
  - dedx.mac: to control dE/dx calculation: 1 layer; minimum ionizing particle
  - emtutor.mac: for tutorial; interactivity + visualisation
+ - geom.mac: to play with geometry
  - ionC12.mac: ion C12, 1 layer
  - lhcb.mac: LHCB ECAL model
  - linac.mac: Linac/Ecal from Graham Wilson
