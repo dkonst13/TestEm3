@@ -23,48 +23,37 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-/// \file PhysicsListMessenger.cc
-/// \brief Implementation of the PhysicsListMessenger class
+/// \file electromagnetic/TestEm1/include/StepMaxMessenger.hh
+/// \brief Definition of the StepMaxMessenger class
 //
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#include "PhysicsListMessenger.hh"
+#ifndef StepMaxMessenger_h
+#define StepMaxMessenger_h 1
 
-#include "PhysicsList.hh"
-#include "G4UIdirectory.hh"
-#include "G4UIcmdWithAString.hh"
+#include "globals.hh"
+#include "G4UImessenger.hh"
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-PhysicsListMessenger::PhysicsListMessenger(PhysicsList* pPhys)
-  :G4UImessenger(),fPhysicsList(pPhys)
-{  
-  fPhysDir = new G4UIdirectory("/testem/phys/");
-  fPhysDir->SetGuidance("physics list commands");
-
-  fListCmd = new G4UIcmdWithAString("/testem/phys/addPhysics",this);  
-  fListCmd->SetGuidance("Add modula physics list.");
-  fListCmd->SetParameterName("PList",false);
-  fListCmd->AvailableForStates(G4State_PreInit);
-  fListCmd->SetToBeBroadcasted(false);
-}
+class StepMax;
+class G4UIcmdWithADoubleAndUnit;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-PhysicsListMessenger::~PhysicsListMessenger()
+class StepMaxMessenger: public G4UImessenger
 {
-  delete fListCmd;
-  delete fPhysDir;
-}
+  public:
+    StepMaxMessenger(StepMax*);
+   ~StepMaxMessenger();
+    
+    virtual void SetNewValue(G4UIcommand*, G4String);
+    
+  private:
+    StepMax* fStepMax;
+    G4UIcmdWithADoubleAndUnit* fStepMaxCmd;
+};
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void PhysicsListMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
-{ 
-  if( command == fListCmd )
-    { fPhysicsList->AddPhysicsList(newValue); }
-}
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+#endif

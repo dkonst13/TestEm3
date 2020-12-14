@@ -48,10 +48,9 @@ public:
  ~PhysicsList();
 
   virtual void ConstructParticle();
-        
+  virtual void ConstructProcess();            
   void AddPhysicsList(const G4String& name);
     
-  virtual void ConstructProcess();    
   void AddStepMax();
     
 private:

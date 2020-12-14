@@ -23,48 +23,43 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-/// \file PhysicsListMessenger.cc
-/// \brief Implementation of the PhysicsListMessenger class
+/// \file electromagnetic/TestEm1/src/StepMaxMessenger.cc
+/// \brief Implementation of the StepMaxMessenger class
 //
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#include "PhysicsListMessenger.hh"
+#include "StepMaxMessenger.hh"
 
-#include "PhysicsList.hh"
-#include "G4UIdirectory.hh"
-#include "G4UIcmdWithAString.hh"
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-PhysicsListMessenger::PhysicsListMessenger(PhysicsList* pPhys)
-  :G4UImessenger(),fPhysicsList(pPhys)
-{  
-  fPhysDir = new G4UIdirectory("/testem/phys/");
-  fPhysDir->SetGuidance("physics list commands");
-
-  fListCmd = new G4UIcmdWithAString("/testem/phys/addPhysics",this);  
-  fListCmd->SetGuidance("Add modula physics list.");
-  fListCmd->SetParameterName("PList",false);
-  fListCmd->AvailableForStates(G4State_PreInit);
-  fListCmd->SetToBeBroadcasted(false);
-}
+#include "StepMax.hh"
+#include "G4UIcmdWithADoubleAndUnit.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-PhysicsListMessenger::~PhysicsListMessenger()
-{
-  delete fListCmd;
-  delete fPhysDir;
-}
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-void PhysicsListMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
+StepMaxMessenger::StepMaxMessenger(StepMax* stepM)
+:G4UImessenger(),fStepMax(stepM),fStepMaxCmd(nullptr)
 { 
-  if( command == fListCmd )
-    { fPhysicsList->AddPhysicsList(newValue); }
+  fStepMaxCmd = new G4UIcmdWithADoubleAndUnit("/testem/stepMax",this);
+  fStepMaxCmd->SetGuidance("Set max allowed step length");
+  fStepMaxCmd->SetParameterName("mxStep",false);
+  fStepMaxCmd->SetRange("mxStep>0.");
+  fStepMaxCmd->SetUnitCategory("Length");
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+StepMaxMessenger::~StepMaxMessenger()
+{
+  delete fStepMaxCmd;
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+void StepMaxMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
+{ 
+  if (command == fStepMaxCmd)
+    { fStepMax->SetMaxStep(fStepMaxCmd->GetNewDoubleValue(newValue));}
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
