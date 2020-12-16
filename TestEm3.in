@@ -9,7 +9,7 @@
 #
 /testem/phys/addPhysics  emstandard_opt0
 #
-/process/em/verbose 0
+/process/em/verbose 1
 /process/msc/Skin 1
 /run/initialize
 #
