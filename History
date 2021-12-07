@@ -1,18 +1,6 @@
-----------------------------------------------------
+---
 
-     =========================================================
-     Geant4 - an Object-Oriented Toolkit for Simulation in HEP
-     =========================================================
-
-                    TestEm3 History file
-                    --------------------
-This file should be used by the G4 example coordinator to briefly
-summarize all major modifications introduced in the code and keep
-track of all tags.
-
-     ----------------------------------------------------------
-     * Reverse chronological order (last date on top), please *
-     ----------------------------------------------------------
+# History entries prior to 11.0
      
 06-10-21 I. Hrivnacova (testem3-V10-07-03)
 - Migration to new G4AnalysisManager.hh header;
