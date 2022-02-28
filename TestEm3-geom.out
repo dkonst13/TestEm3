@@ -11,7 +11,7 @@ Environment variable "G4FORCE_RUN_MANAGER_TYPE" enabled with value == Serial. Fo
 
 
 **************************************************************
- Geant4 version Name: geant4-11-00-ref-01    (31-January-2022)
+ Geant4 version Name: geant4-11-00-ref-02    (28-February-2022)
                        Copyright : Geant4 Collaboration
                       References : NIM A 506 (2003), 250-303
                                  : IEEE-TNS 53 (2006), 270-278
@@ -543,7 +543,7 @@ CoulombScat:  for pi- XStype:1 SubType=1 BuildTable=1
 ------------------------------------------------------------
       material   Edep       RMS         sqrt(E0(GeV))*rmsE/Emean     total tracklen 
  
-     Aluminium: 85.593 MeV :  1.532 MeV    0.9805 +-  0.31 %      10.4 cm  +-  532 um 
+     Aluminium: 85.592 MeV :  1.534 MeV    0.9814 +- 0.3103 %      10.4 cm  +-  532 um 
 
 ------------------------------------------------------------
  Beam particle proton  E = 300 MeV
@@ -557,7 +557,7 @@ CoulombScat:  for pi- XStype:1 SubType=1 BuildTable=1
  Energy deposition from Energy flow balance : 
   material 	 Total Edep 
  
- Aluminium:	 85.5928 MeV
+ Aluminium:	 85.5924 MeV
 
 ------------------------------------------------------------
 
