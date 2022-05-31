@@ -11,7 +11,7 @@ Environment variable "G4FORCE_RUN_MANAGER_TYPE" enabled with value == Serial. Fo
 
 
 **************************************************************
- Geant4 version Name: geant4-11-00-ref-04    (30-April-2022)
+ Geant4 version Name: geant4-11-00-ref-05    (31-May-2022)
                        Copyright : Geant4 Collaboration
                       References : NIM A 506 (2003), 250-303
                                  : IEEE-TNS 53 (2006), 270-278
@@ -87,8 +87,8 @@ PhysicsList::AddPhysicsList: <emstandard_opt0>
 LPM effect enabled                                 1
 Enable creation and use of sampling tables         0
 Apply cuts on all EM processes                     0
-Use combined TransportationWithMsc                 0
-Use general process                                0
+Use combined TransportationWithMsc                 Disabled
+Use general process                                1
 Enable linear polarisation for gamma               0
 Enable sampling of quantum entanglement            0
 X-section factor for integral approach             0.8
@@ -105,7 +105,7 @@ Lowest triplet kinetic energy                      1 MeV
 Enable sampling of gamma linear polarisation       0
 5D gamma conversion model type                     0
 5D gamma conversion model on isolated ion          0
-Livermore data directory                           livermore
+Livermore data directory                           epics_2017
 =======================================================================
 ======                 Ionisation Parameters                   ========
 =======================================================================
@@ -115,8 +115,9 @@ Step function for light ions                       (0.2, 0.1 mm)
 Step function for general ions                     (0.2, 0.1 mm)
 Lowest e+e- kinetic energy                         1 keV
 Lowest muon/hadron kinetic energy                  1 keV
-Fluctuations of dE/dx are enabled                  1
 Use ICRU90 data                                    0
+Fluctuations of dE/dx are enabled                  1
+Type of fluctuation model                          2
 Use built-in Birks satuaration                     0
 Build CSDA range enabled                           0
 Use cut as a final range enabled                   0
@@ -548,28 +549,28 @@ Index : 2     used in the geometry : Yes
  Run terminated.
 Run Summary
   Number of events processed : 100
-  User=1.580000s Real=1.834866s Sys=0.000000s
+  User=1.460000s Real=1.774413s Sys=0.010000s
 
 ------------------------------------------------------------
       material   Edep       RMS         sqrt(E0(GeV))*rmsE/Emean     total tracklen 
  
-         G4_Pb: 776.81 MeV :  16.98 MeV     2.186 +- 0.2186 %      54.9 cm  +- 1.39 cm 
-        G4_lAr: 213.35 MeV :  15.99 MeV     7.492 +- 0.7492 %      1.05 m   +- 8.15 cm 
+         G4_Pb: 779.51 MeV :  15.72 MeV     2.017 +- 0.2017 %        55 cm  +- 1.32 cm 
+        G4_lAr: 212.05 MeV :  14.75 MeV     6.954 +- 0.6954 %      1.04 m   +- 7.27 cm 
 
 ------------------------------------------------------------
  Beam particle e-  E = 1 GeV
- Mean number of gamma       508
- Mean number of e-          868
- Mean number of e+          53.8
- Mean number of charged steps  3656.4
- Mean number of neutral steps  3704.53
+ Mean number of gamma       512
+ Mean number of e-          875
+ Mean number of e+          54.2
+ Mean number of charged steps  3625.34
+ Mean number of neutral steps  3727.12
 ------------------------------------------------------------
 
  Energy deposition from Energy flow balance : 
   material 	 Total Edep 
  
-     G4_Pb:	 776.846 MeV
-    G4_lAr:	 213.252 MeV
+     G4_Pb:	 779.506 MeV
+    G4_lAr:	 212.052 MeV
 
 ------------------------------------------------------------
 
@@ -620,28 +621,28 @@ Index : 2     used in the geometry : Yes
  Run terminated.
 Run Summary
   Number of events processed : 100
-  User=1.340000s Real=1.695344s Sys=0.010000s
+  User=1.200000s Real=1.275052s Sys=0.010000s
 
 ------------------------------------------------------------
       material   Edep       RMS         sqrt(E0(GeV))*rmsE/Emean     total tracklen 
  
-         G4_Pb: 775.21 MeV :  21.65 MeV     2.793 +- 0.2793 %      52.2 cm  +- 1.34 cm 
-        G4_lAr: 214.28 MeV :  17.55 MeV     8.191 +- 0.8191 %      1.01 m   +- 7.77 cm 
+         G4_Pb:  776.6 MeV :  20.48 MeV     2.637 +- 0.2637 %      52.1 cm  +-  1.1 cm 
+        G4_lAr: 216.07 MeV :  15.64 MeV     7.238 +- 0.7238 %      1.02 m   +- 7.09 cm 
 
 ------------------------------------------------------------
  Beam particle e-  E = 1 GeV
  Mean number of gamma       291
- Mean number of e-          553
- Mean number of e+          54.1
- Mean number of charged steps  3114.67
- Mean number of neutral steps  2896.16
+ Mean number of e-          551
+ Mean number of e+          53
+ Mean number of charged steps  3129.51
+ Mean number of neutral steps  2886.11
 ------------------------------------------------------------
 
  Energy deposition from Energy flow balance : 
   material 	 Total Edep 
  
-     G4_Pb:	 775.437 MeV
-    G4_lAr:	 215.843 MeV
+     G4_Pb:	 773.365 MeV
+    G4_lAr:	 217.434 MeV
 
 ------------------------------------------------------------
 
@@ -649,6 +650,6 @@ Run Summary
 G4 kernel has come to Quit state.
 ================== Deleting memory pools ===================
 Number of memory pools allocated: 11 of which, static: 0
-Dynamic pools deleted: 11 / Total memory freed: 0.088 MB
+Dynamic pools deleted: 11 / Total memory freed: 0.097 MB
 ============================================================
 RunManagerKernel is deleted. Good bye :)

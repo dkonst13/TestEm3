@@ -11,7 +11,7 @@ Environment variable "G4FORCE_RUN_MANAGER_TYPE" enabled with value == Serial. Fo
 
 
 **************************************************************
- Geant4 version Name: geant4-11-00-ref-04    (30-April-2022)
+ Geant4 version Name: geant4-11-00-ref-05    (31-May-2022)
                        Copyright : Geant4 Collaboration
                       References : NIM A 506 (2003), 250-303
                                  : IEEE-TNS 53 (2006), 270-278
@@ -68,8 +68,8 @@ Environment variable "G4FORCE_RUN_MANAGER_TYPE" enabled with value == Serial. Fo
 LPM effect enabled                                 1
 Enable creation and use of sampling tables         0
 Apply cuts on all EM processes                     0
-Use combined TransportationWithMsc                 0
-Use general process                                0
+Use combined TransportationWithMsc                 Disabled
+Use general process                                1
 Enable linear polarisation for gamma               0
 Enable sampling of quantum entanglement            0
 X-section factor for integral approach             0.8
@@ -86,7 +86,7 @@ Lowest triplet kinetic energy                      1 MeV
 Enable sampling of gamma linear polarisation       0
 5D gamma conversion model type                     0
 5D gamma conversion model on isolated ion          0
-Livermore data directory                           livermore
+Livermore data directory                           epics_2017
 =======================================================================
 ======                 Ionisation Parameters                   ========
 =======================================================================
@@ -96,8 +96,9 @@ Step function for light ions                       (0.1, 0.02 mm)
 Step function for general ions                     (0.1, 0.001 mm)
 Lowest e+e- kinetic energy                         100 eV 
 Lowest muon/hadron kinetic energy                  1 keV
-Fluctuations of dE/dx are enabled                  1
 Use ICRU90 data                                    1
+Fluctuations of dE/dx are enabled                  1
+Type of fluctuation model                          2
 Use built-in Birks satuaration                     0
 Build CSDA range enabled                           0
 Use cut as a final range enabled                   0
@@ -544,7 +545,7 @@ CoulombScat:  for pi- XStype:1 SubType=1 BuildTable=1
 ------------------------------------------------------------
       material   Edep       RMS         sqrt(E0(GeV))*rmsE/Emean     total tracklen 
  
-     Aluminium: 85.592 MeV :  1.534 MeV    0.9814 +- 0.3103 %      10.4 cm  +-  532 um 
+     Aluminium: 85.592 MeV :  1.534 MeV    0.9819 +- 0.3105 %      10.4 cm  +-  532 um 
 
 ------------------------------------------------------------
  Beam particle proton  E = 300 MeV
@@ -558,7 +559,7 @@ CoulombScat:  for pi- XStype:1 SubType=1 BuildTable=1
  Energy deposition from Energy flow balance : 
   material 	 Total Edep 
  
- Aluminium:	 85.5924 MeV
+ Aluminium:	 85.5922 MeV
 
 ------------------------------------------------------------
 
