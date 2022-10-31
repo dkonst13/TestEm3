@@ -11,7 +11,7 @@ Environment variable "G4FORCE_RUN_MANAGER_TYPE" enabled with value == Serial. Fo
 
 
 **************************************************************
- Geant4 version Name: geant4-11-00-ref-08    (30-September-2022)
+ Geant4 version Name: geant4-11-00-ref-09    (31-October-2022)
                        Copyright : Geant4 Collaboration
                       References : NIM A 506 (2003), 250-303
                                  : IEEE-TNS 53 (2006), 270-278
@@ -99,7 +99,7 @@ Lowest e+e- kinetic energy                         100 eV
 Lowest muon/hadron kinetic energy                  1 keV
 Use ICRU90 data                                    1
 Fluctuations of dE/dx are enabled                  1
-Type of fluctuation model                          2
+Type of fluctuation model for leptons and hadrons  Urban
 Use built-in Birks satuaration                     0
 Build CSDA range enabled                           0
 Use cut as a final range enabled                   0
@@ -135,8 +135,7 @@ Screening factor                                   1
 ======                 Atomic Deexcitation Parameters          ========
 =======================================================================
 Fluorescence enabled                               1
-Fluorescence Bearden data files enabled            0
-Fluorescence ANSTO data files enabled              0
+Directory in G4LEDATA for fluorescence data files  fluor
 Auger electron cascade enabled                     0
 PIXE atomic de-excitation enabled                  0
 De-excitation module ignores cuts                  0
