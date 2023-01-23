@@ -56,6 +56,7 @@ class Run : public G4Run
       
     void FillPerEvent(G4int,G4double,G4double);
     
+    void SumEnergies (G4double edeptot, G4double eleak);    
     void SumEnergyFlow (G4int plane, G4double Eflow);
     void SumLateralEleak(G4int cell, G4double Eflow);
     void AddChargedStep();
@@ -76,6 +77,10 @@ class Run : public G4Run
     G4double fSumEAbs [kMaxAbsor], fSum2EAbs [kMaxAbsor]; 
     G4double fSumLAbs [kMaxAbsor], fSum2LAbs [kMaxAbsor];
     
+    G4double fEdepTot,  fEdepTot2;    
+    G4double fEleakTot, fEleakTot2;   
+    G4double fEtotal,   fEtotal2;
+        
     std::vector<G4double> fEnergyFlow;
     std::vector<G4double> fLateralEleak;
     std::vector<G4double> fEnergyDeposit[kMaxAbsor];
