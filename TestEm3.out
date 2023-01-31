@@ -11,7 +11,7 @@ Environment variable "G4FORCE_RUN_MANAGER_TYPE" enabled with value == Serial. Fo
 
 
 **************************************************************
- Geant4 version Name: geant4-11-01-ref-00    (9-December-2022)
+ Geant4 version Name: geant4-11-01-ref-01    (31-January-2023)
                        Copyright : Geant4 Collaboration
                       References : NIM A 506 (2003), 250-303
                                  : IEEE-TNS 53 (2006), 270-278
@@ -548,7 +548,7 @@ Index : 2     used in the geometry : Yes
  Run terminated.
 Run Summary
   Number of events processed : 100
-  User=1.660000s Real=1.678080s Sys=0.000000s
+  User=1.650000s Real=1.662850s Sys=0.000000s
 
 ------------------------------------------------------------
       material   Edep       RMS         sqrt(E0(GeV))*rmsE/Emean     total tracklen 
@@ -556,11 +556,14 @@ Run Summary
          G4_Pb: 775.36 MeV :  17.79 MeV     2.295 +- 0.2295 %      54.7 cm  +- 1.37 cm 
         G4_lAr: 213.68 MeV :  16.63 MeV     7.783 +- 0.7783 %      1.05 m   +- 8.45 cm 
 
+ Total energy deposited = 989 MeV +- 7.31 MeV
+ Energy leakage = 10.95 MeV +- 7.291 MeV
+ Total energy :  Edep + Eleak = 1000 MeV +- 101.7 keV
 ------------------------------------------------------------
  Beam particle e-  E = 1 GeV
- Mean number of gamma       507
- Mean number of e-          870
- Mean number of e+          53.7
+ Mean number of gamma       506.9
+ Mean number of e-          870.1
+ Mean number of e+          53.67
  Mean number of charged steps  3659.12
  Mean number of neutral steps  3651.52
 ------------------------------------------------------------
@@ -620,7 +623,7 @@ Index : 2     used in the geometry : Yes
  Run terminated.
 Run Summary
   Number of events processed : 100
-  User=1.370000s Real=1.391094s Sys=0.000000s
+  User=1.390000s Real=1.398173s Sys=0.010000s
 
 ------------------------------------------------------------
       material   Edep       RMS         sqrt(E0(GeV))*rmsE/Emean     total tracklen 
@@ -628,11 +631,14 @@ Run Summary
          G4_Pb: 773.86 MeV :  20.77 MeV     2.683 +- 0.2683 %        52 cm  +- 1.36 cm 
         G4_lAr: 215.88 MeV :  17.59 MeV      8.15 +- 0.815 %      1.02 m   +- 8.23 cm 
 
+ Total energy deposited = 989.7 MeV +- 14.37 MeV
+ Energy leakage = 8.747 MeV +- 6.022 MeV
+ Total energy :  Edep + Eleak = 998.5 MeV +- 12.42 MeV
 ------------------------------------------------------------
  Beam particle e-  E = 1 GeV
- Mean number of gamma       290
- Mean number of e-          556
- Mean number of e+          53.2
+ Mean number of gamma       290.5
+ Mean number of e-          556.2
+ Mean number of e+          53.21
  Mean number of charged steps  3103.77
  Mean number of neutral steps  2939.75
 ------------------------------------------------------------

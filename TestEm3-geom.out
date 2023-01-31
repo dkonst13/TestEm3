@@ -11,7 +11,7 @@ Environment variable "G4FORCE_RUN_MANAGER_TYPE" enabled with value == Serial. Fo
 
 
 **************************************************************
- Geant4 version Name: geant4-11-01-ref-00    (9-December-2022)
+ Geant4 version Name: geant4-11-01-ref-01    (31-January-2023)
                        Copyright : Geant4 Collaboration
                       References : NIM A 506 (2003), 250-303
                                  : IEEE-TNS 53 (2006), 270-278
@@ -545,6 +545,9 @@ CoulombScat:  for pi- XStype:1 SubType=1 BuildTable=1
  
      Aluminium: 85.178 MeV :   1.25 MeV    0.8035 +- 0.2541 %      10.4 cm  +-  645 um 
 
+ Total energy deposited = 85.18 MeV +- 1.25 MeV
+ Energy leakage = 214.8 MeV +- 1.25 MeV
+ Total energy :  Edep + Eleak = 300 MeV +- 0 eV 
 ------------------------------------------------------------
  Beam particle proton  E = 300 MeV
  Mean number of gamma       0
