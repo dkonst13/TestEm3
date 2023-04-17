@@ -51,12 +51,7 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 Run::Run(DetectorConstruction* det)
-: G4Run(),
-  fDetector(det), 
-  fParticle(nullptr), fEkin(0.),
-  fChargedStep(0), fNeutralStep(0),
-  fN_gamma(0), fN_elec(0), fN_pos(0),
-  fApplyLimit(false)
+: fDetector(det)
 {
   //initialize cumulative quantities
   //
@@ -78,11 +73,6 @@ Run::Run(DetectorConstruction* det)
   fLateralEleak.resize(nbPlanes);
   for (G4int k=0; k<nbPlanes; k++) {fEnergyFlow[k] = fLateralEleak[k] = 0.; }  
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-Run::~Run()
-{ }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
