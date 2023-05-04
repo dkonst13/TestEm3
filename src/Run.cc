@@ -200,7 +200,7 @@ void Run::Merge(const G4Run* run)
 void Run::EndOfRun()
 {
   G4int nEvt = numberOfEvent;
-  G4double  norm = G4double(nEvt);
+  G4double norm = G4double(nEvt);
   if(norm > 0) norm = 1./norm;
   G4double qnorm = std::sqrt(norm);
 
@@ -251,8 +251,8 @@ void Run::EndOfRun()
         rmsEAbs  = std::sqrt(std::abs(MeanEAbs2 - MeanEAbs*MeanEAbs));
       }
 
-      resolution= 100.*sqbeam*rmsEAbs/MeanEAbs;
-      rmsres    = resolution*qnorm;
+      resolution = (MeanEAbs > 0.) ? 100.*sqbeam*rmsEAbs/MeanEAbs : 0.0;
+      rmsres = resolution*qnorm;
 
       // Save mean and RMS
       fSumEAbs[k] = MeanEAbs;
@@ -280,8 +280,8 @@ void Run::EndOfRun()
     
   //total energy deposited
   //
-  fEdepTot      /= nEvt;
-  fEdepTot2     /= nEvt;
+  fEdepTot *= norm;
+  fEdepTot2 *= norm;
   G4double rmsEdep = std::sqrt(std::abs(fEdepTot2 - fEdepTot*fEdepTot));
   
   G4cout << "\n Total energy deposited = " << std::setprecision(4)
@@ -290,8 +290,8 @@ void Run::EndOfRun()
          
   //Energy leakage
   //
-  fEleakTot      /= nEvt;
-  fEleakTot2     /= nEvt;
+  fEleakTot *= norm;
+  fEleakTot2 *= norm;
   G4double rmsEleak = std::sqrt(std::abs(fEleakTot2 - fEleakTot*fEleakTot));
   
   G4cout << " Energy leakage = " << G4BestUnit(fEleakTot, "Energy")
@@ -299,8 +299,8 @@ void Run::EndOfRun()
 	 
   //total energy
   //
-  fEtotal      /= nEvt;
-  fEtotal2     /= nEvt;
+  fEtotal *= norm;
+  fEtotal2 *= norm;
   G4double rmsEtotal = std::sqrt(std::abs(fEtotal2 - fEtotal*fEtotal));
          
   G4cout << " Total energy :  Edep + Eleak = "
