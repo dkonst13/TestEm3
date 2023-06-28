@@ -11,7 +11,7 @@ Environment variable "G4FORCE_RUN_MANAGER_TYPE" enabled with value == Serial. Fo
 
 
 **************************************************************
- Geant4 version Name: geant4-11-01-ref-05    (31-May-2023)
+ Geant4 version Name: geant4-11-01-ref-06    (30-June-2023)
                        Copyright : Geant4 Collaboration
                       References : NIM A 506 (2003), 250-303
                                  : IEEE-TNS 53 (2006), 270-278
@@ -54,6 +54,7 @@ Environment variable "G4FORCE_RUN_MANAGER_TYPE" enabled with value == Serial. Fo
 -------------------------------------------------------------
 #
 /globalField/setValue 0 0 10 tesla
+ G4ChordFinder: stepperDriverId: 2
 #
 /testem/gun/setDefault
 /testem/gun/rndm 0.1
@@ -543,10 +544,10 @@ CoulombScat:  for pi- XStype:1 SubType=1 BuildTable=1
 ------------------------------------------------------------
       material   Edep       RMS         sqrt(E0(GeV))*rmsE/Emean     total tracklen 
  
-     Aluminium: 85.178 MeV :   1.25 MeV    0.8035 +- 0.2541 %      10.4 cm  +-  645 um 
+     Aluminium: 85.764 MeV :  1.608 MeV     1.027 +- 0.3247 %      10.3 cm  +-  602 um 
 
- Total energy deposited = 85.18 MeV +- 1.25 MeV
- Energy leakage = 214.8 MeV +- 1.25 MeV
+ Total energy deposited = 85.76 MeV +- 1.608 MeV
+ Energy leakage = 214.2 MeV +- 1.608 MeV
  Total energy :  Edep + Eleak = 300 MeV +- 0 eV 
 ------------------------------------------------------------
  Beam particle proton  E = 300 MeV
@@ -560,7 +561,7 @@ CoulombScat:  for pi- XStype:1 SubType=1 BuildTable=1
  Energy deposition from Energy flow balance : 
   material 	 Total Edep 
  
- Aluminium:	 85.1776 MeV
+ Aluminium:	 85.7636 MeV
 
 ------------------------------------------------------------
 
