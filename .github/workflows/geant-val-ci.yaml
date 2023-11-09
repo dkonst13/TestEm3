@@ -4,4 +4,4 @@ on: [push, pull_request]
 
 jobs:
   call-reusable:
-    uses: dkonst13/geant-val-ci-workflows/.github/workflows/geant-val-ci-workflows.yml@main
+    uses: dkonst13/geant-val-ci-workflows/.github/workflows/geant-val-ci-workflows.yaml@main
